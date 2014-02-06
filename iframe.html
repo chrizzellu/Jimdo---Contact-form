@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iframe</title>
+<style type="text/css">
+body {
+	background-color: #F00;
+}
+</style>
+</head>
+
+<body> 
+<iframe name="Stack" width="100%" src="index.html" frameborder="0" scrolling="no" id="iframe" onload='javascript:resizeIframe(this);' /></iframe>
+</body>
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+	var iframe_height = obj.contentWindow.document.body.scrollHeight;
+	var buffer_height = '50';
+	height = +iframe_height + +buffer_height;
+    obj.style.height = height + 'px';
+  }
+</script>
+</html>

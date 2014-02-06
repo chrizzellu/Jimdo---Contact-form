@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact form</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/send_form.js"></script>
+</head>
+
+<body>
+<div class="page_wrapper">
+<div class="confirmation_notification" id="confirmation_notification">Wir haben deine Anfrage erhalten und antworten in den naechsten XX Stunden</div>
+<div class="error_notification" id="error_notification">Beim Versenden deiner Anfrage ist leider ein Fehler aufgetreten. Versuche es bitte spaeter nochmal</div>
+<div class="input_field_wrapper_float_left_right" id="contact_form">
+    <div class="input_field">
+    <label for="name">Dein vollstaendiger Name*</label>
+    <input type="text" id="name" name="name" onchange="name_validation();" />
+    <div class="notification" id="name_notification">Bitte gib deinen vollstaendigen Namen ein</div>
+    </div>
+    <div class="input_field">
+    <label for="email">Deine Emailadresse*</label>
+    <input type="email" id="email" name="email" onchange="email_validation();" />
+    <div class="notification" id="email_notification">Bitte gib eine valide Emailaddresse ein</div>
+    </div>
+    <div class="input_field">
+    <label for="url">Link deiner Jimdo Webseite</label>
+    <input type="url" id="url" name="url" onchange="package_validation();" />
+    <div class="notification" id="url_notification">Bitte gib eine Website-Addresse ein</div>
+    <div class="notification" id="package_information"></div>
+    </div>
+    <div class="input_field">
+    <label for="subject">Betreff</label>
+    <input type="text" id="subject" name="subject" onchange="subject_validation();" />
+    <div class="notification" id="subject_notification">Bitte gib ein Betreff ein</div>
+    </div>
+    <div class="input_field">
+    <label for="questions">Nachricht</label>
+    <textarea name="questions" id="questions" rows="8" onchange="questions_validation();"></textarea>
+    <div class="notification" id="questions_notification">Bitte gib eine Nachricht ein</div>
+    </div>
+    <div class="input_field">
+    <input type="submit" id="package" class="href_button" value="Senden" onclick="send_form();">
+    </div>
+</div><!-- input_field_wrapper_float_left_right -->
+</div><!-- page_wrapper -->
+</body>
+</html>
