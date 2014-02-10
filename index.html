@@ -32,16 +32,33 @@
     </div>
     <div class="input_field">
     <label for="subject">Betreff</label>
-    <input type="text" id="subject" name="subject" onchange="subject_validation();" />
-    <div class="notification" id="subject_notification">Bitte gib ein Betreff ein</div>
+    <select name="subject" id="subject" onchange="subject_validation();">
+    	<option value="">Betreff waehlen</option>
+    	<option value="general">General Question</option>
+        <option value="elements">Features and Elements</option>
+        <option value="payment">Billing</option>
+        <option value="domaintransfer">Domain Transfer</option>
+        <option value="domainsgeneral">General Questions about Domains</option>
+        <option value="emailaccounts">Email Addresses</option>
+        <option value="bugreport">Error Message</option>
+        <option value="shop">Store</option>
+        <option value="widgets">Widgets &amp; External Services</option>
+        <option value="cancellation">Cancellation</option>
+        <option value="feedback">Suggestions</option>
+    </select>
+    <div class="notification" id="subject_notification">Bitte waehle ein Betreff ein</div>
     </div>
     <div class="input_field">
     <label for="questions">Nachricht</label>
     <textarea name="questions" id="questions" rows="8" onchange="questions_validation();"></textarea>
     <div class="notification" id="questions_notification">Bitte gib eine Nachricht ein</div>
     </div>
+    <input type="file" name="attachment_upload" id="attachment_upload" style="display:none">
     <div class="input_field">
-    <input type="submit" id="package" class="href_button" value="Senden" onclick="send_form();">
+    <input type="submit" id="package" class="grey" value="Attachment hinzufuegen" onclick="select_attachment();">
+    </div>
+    <div class="input_field">
+    <input type="submit" id="package" class="blue" value="Senden" onclick="send_form();">
     </div>
 </div><!-- input_field_wrapper_float_left_right -->
 </div><!-- page_wrapper -->

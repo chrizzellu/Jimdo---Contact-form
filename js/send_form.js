@@ -47,9 +47,9 @@ function package_validation() {
 		) {
 	   $.ajax (
 		   {
-                type: "GET",
+                type: "POST",
                 async: false,
-                url: "http://a.jimdo.com/app/web/api/servers",
+                url: "api/package.php",
                 data:[
 				   {
 					   name: 'url',
@@ -58,7 +58,7 @@ function package_validation() {
 			   ],
                success: function (response) {
 				   var jsn = $.parseJSON(response);
-				   console.log ('url', jsn);
+				   console.log ('package', jsn);
 				   if (jsn.success) {
 					   var responseData = jsn.data.value;
 					   if (responseData.package) {
@@ -102,6 +102,10 @@ function questions_validation(){
   	}
 }
 
+function select_attachment(){
+	$("input[name=attachment_upload]").trigger("click");
+}
+
 function send_form () {
 	console.log('send wurde aufgerufen');
 	var name = $ ('#name').val ();
@@ -117,12 +121,21 @@ function send_form () {
 		subject.length > 0 &&
 		questions.length > 0
 		) {
+	   	var data = new FormData();
+		jQuery.each($('#attachment_upload')[0].files, function(i, file) {
+			data.append("ajax-attachment", file);
+		});
+		data.append("action","upload");
 	   $.ajax (
 		   {
 
                 type: "POST",
                 async: false,
+				contentType: 'multipart/form-data',
                 url: "api/send_form.php",
+				cache: false,
+				contentType: false,
+				processData: false,
                 data:[
 				   {
 					   name: 'name',
@@ -143,6 +156,10 @@ function send_form () {
 				   {
 					   name: 'questions',
 					   value: questions
+				   },
+				   {
+					   name: 'attachment',
+					   value: data
 				   }
 			   ],
                success: function (response) {
