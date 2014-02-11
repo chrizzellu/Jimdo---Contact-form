@@ -122,6 +122,7 @@ function send_form() {
         $.ajax(
             {
                 type: "POST",
+                async: false,
                 url: "http://a.jimdo.dev/app/web/api/sendmail",
                 dataType: "json",
                 data: {
@@ -131,6 +132,7 @@ function send_form() {
                     'subject': subject,
                     'message': message
                 },
+
                 success: function (response) {
                     var jsn = $.parseJSON(response);
                     console.log('send', jsn);
