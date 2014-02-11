@@ -68,6 +68,7 @@ a {
 	color: #333;
 	font-size: 14px;
 	padding: 10px;
+	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field select {
 	float: right;
@@ -81,6 +82,7 @@ a {
 	padding: 10px;
 	-webkit-appearance: none;
 	border-radius: 0px;
+	outline: none;
 } 
 .input_field_wrapper_float_left_right .input_field textarea {
 	float:right;
@@ -91,16 +93,15 @@ a {
 	color: #333;
 	font-size: 14px;
 	padding: 10px;
+	outline: none;
 } 
 .input_field_wrapper_float_left_right .input_field input[type=submit] {
 	float:right;
 	width:25%;
 	padding: 10px;
-	border: 1px solid #4898bb;
-	color: #fff;
 	font-size: 16px;
 	text-decoration: none;
-	background-color:#67b2d9;
+	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue {
 	border: 1px solid #4898bb;
@@ -163,6 +164,7 @@ a {
 	color: #333;
 	font-size: 14px;
 	padding: 10px;
+	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field select {
 	float: right;
@@ -176,6 +178,7 @@ a {
 	padding: 10px;
 	-webkit-appearance: none;
 	border-radius: 0px;
+	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field textarea {
 	float:right;
@@ -186,22 +189,35 @@ a {
 	color: #333;
 	font-size: 14px;
 	padding: 10px;
+	outline: none;
 }
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
+.input_field_wrapper_float_left_right .input_field input[type=submit] {
 	float:right;
 	width:52%;
 	padding: 10px;
-	border: 1px solid #4898bb;
-	color: #fff;
 	font-size: 16px;
 	text-decoration: none;
+	outline: none;
+}
+.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
+	border: 1px solid #4898bb;
+	color: #fff;
 	background-color:#67b2d9;
 }
-
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
 	background-color:#4E8EAF;
 }
+.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
+	border: 1px solid #919191;
+	color: #fff;
+	background-color:#CACACA;
+}
+.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
+.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover {
+	background-color:#A0A0A0;
+}
+
 }
 @media all and (max-width: 579px) {
 .page_wrapper {
@@ -246,6 +262,7 @@ a {
 	font-size: 14px;
 	padding: 10px;
 	margin: 0px 15px 15px 15px;
+	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field select {
 	float: right;
@@ -259,6 +276,7 @@ a {
 	-webkit-appearance: none;
 	border-radius: 0px;
 	margin: 0px 23px 15px 15px;
+	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field textarea {
 	float: left;
@@ -269,22 +287,34 @@ a {
 	font-size: 14px;
 	padding: 10px;
 	margin: 0px 15px 15px 15px;
+	outline: none;
 }
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	float:left;
+.input_field_wrapper_float_left_right .input_field input[type=submit] {
+	float:right;
 	width:90%;
 	padding: 10px;
-	border: 1px solid #4898bb;
-	color: #fff;
 	font-size: 16px;
 	text-decoration: none;
-	background-color:#67b2d9;
-	margin: 0px 15px 15px 15px;
+	outline: none;
 }
-
+.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
+	border: 1px solid #4898bb;
+	color: #fff;
+	background-color:#67b2d9;
+}
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
 	background-color:#4E8EAF;
 }
+.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
+	border: 1px solid #919191;
+	color: #fff;
+	background-color:#CACACA;
+}
+.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
+.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover {
+	background-color:#A0A0A0;
+}
+
 
 }

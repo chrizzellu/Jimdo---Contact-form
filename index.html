@@ -20,18 +20,18 @@
     <div class="notification" id="name_notification">Bitte gib deinen vollstaendigen Namen ein</div>
     </div>
     <div class="input_field">
-    <label for="email">Deine Emailadresse*</label>
-    <input type="email" id="email" name="email" onchange="email_validation();" />
-    <div class="notification" id="email_notification">Bitte gib eine valide Emailaddresse ein</div>
+    <label for="from">Deine Emailadresse*</label>
+    <input type="email" id="from" name="from" onchange="email_validation();" />
+    <div class="notification" id="from_notification">Bitte gib eine valide Emailaddresse ein</div>
     </div>
     <div class="input_field">
-    <label for="url">Link deiner Jimdo Webseite</label>
+    <label for="url">Link deiner Jimdo Webseite*</label>
     <input type="url" id="url" name="url" onchange="package_validation();" />
     <div class="notification" id="url_notification">Bitte gib eine Website-Addresse ein</div>
     <div class="notification" id="package_information"></div>
     </div>
     <div class="input_field">
-    <label for="subject">Betreff</label>
+    <label for="subject">Betreff*</label>
     <select name="subject" id="subject" onchange="subject_validation();">
     	<option value="">Betreff waehlen</option>
     	<option value="general">General Question</option>
@@ -49,13 +49,13 @@
     <div class="notification" id="subject_notification">Bitte waehle ein Betreff ein</div>
     </div>
     <div class="input_field">
-    <label for="questions">Nachricht</label>
-    <textarea name="questions" id="questions" rows="8" onchange="questions_validation();"></textarea>
-    <div class="notification" id="questions_notification">Bitte gib eine Nachricht ein</div>
+    <label for="message">Nachricht*</label>
+    <textarea name="message" id="message" rows="8" onchange="message_validation();"></textarea>
+    <div class="notification" id="message_notification">Bitte gib eine Nachricht ein</div>
     </div>
-    <input type="file" name="attachment_upload" id="attachment_upload" style="display:none">
     <div class="input_field">
-    <input type="submit" id="package" class="grey" value="Attachment hinzufuegen" onclick="select_attachment();">
+    <label for="attachment">Attachment</label>
+    <input type="file" name="attachment" id="attachment" />
     </div>
     <div class="input_field">
     <input type="submit" id="package" class="blue" value="Senden" onclick="send_form();">
