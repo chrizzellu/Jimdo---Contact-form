@@ -2,12 +2,12 @@ $().ready(function() {
 	$("#confirmation_notification").hide();
 	$("#error_notification").hide();
 	$("#name_notification").hide();
-	$("#email_notification").hide();
+	$("#from_notification").hide();
 	$("#url").val("http://");
 	$("#url_notification").hide();
 	$("#package_information").hide();
 	$("#subject_notification").hide();
-	$("#questions_notification").hide();
+	$("#message_notification").hide();
 });
 
 function name_validation() {
@@ -24,13 +24,13 @@ function IsEmailValid(email) {
   return email_regex.test(email);
 }
 function email_validation() {
-	var email = $ ('#email').val();
+	var email = $ ('#from').val();
 	if ((email.length < 1) || (!IsEmailValid(email))) {
-	   	$("#email_notification").show();
-		$("#email").css('background-color', '#E4E4E4');
+	   	$("#from_notification").show();
+		$("#from").css('background-color', '#E4E4E4');
 	} else {
-        $("#email_notification").hide();
-		$("#email").css('background-color', '#FFF');
+        $("#from_notification").hide();
+		$("#from").css('background-color', '#FFF');
   	}
 }
 function IsURLValid(url){
@@ -47,9 +47,9 @@ function package_validation() {
 		) {
 	   $.ajax (
 		   {
-                type: "GET",
+                type: "POST",
                 async: false,
-                url: "http://a.jimdo.com/app/web/api/servers",
+                url: "api/package.php",
                 data:[
 				   {
 					   name: 'url',
@@ -58,7 +58,7 @@ function package_validation() {
 			   ],
                success: function (response) {
 				   var jsn = $.parseJSON(response);
-				   console.log ('url', jsn);
+				   console.log ('package', jsn);
 				   if (jsn.success) {
 					   var responseData = jsn.data.value;
 					   if (responseData.package) {
@@ -92,37 +92,46 @@ function subject_validation() {
 		$("#subject").css('background-color', '#FFF');
   	}
 }
-function questions_validation(){
-	if ($("#questions").val().length < 1) {
-	   	$("#questions_notification").show();
-		$("#questions").css('background-color', '#E4E4E4');
+function message_validation(){
+	if ($("#message").val().length < 1) {
+	   	$("#message_notification").show();
+		$("#message").css('background-color', '#E4E4E4');
 	} else {
-        $("#questions_notification").hide();
-		$("#questions").css('background-color', '#FFF');
+        $("#message_notification").hide();
+		$("#message").css('background-color', '#FFF');
   	}
 }
 
 function send_form () {
 	console.log('send wurde aufgerufen');
 	var name = $ ('#name').val ();
-	var email = $ ('#email').val ();
+	var email = $ ('#from').val ();
 	var url = $ ('#url').val ();
 	var subject = $ ('#subject').val ();
-	var questions = $ ('#questions').val ();
+	var message = $ ('#message').val ();
 
 	if (
 		name.length > 0 && 
 	 	email.length > 0 &&
 		url.length > 0 &&
 		subject.length > 0 &&
-		questions.length > 0
+		message.length > 0
 		) {
+	   	var data = new FormData();
+		jQuery.each($('#attachment_upload')[0].files, function(i, file) {
+			data.append("ajax-attachment", file);
+		});
+		data.append("action","upload");
 	   $.ajax (
 		   {
 
                 type: "POST",
                 async: false,
+				contentType: 'multipart/form-data',
                 url: "api/send_form.php",
+				cache: false,
+				contentType: false,
+				processData: false,
                 data:[
 				   {
 					   name: 'name',
@@ -141,8 +150,12 @@ function send_form () {
 					   value: subject
 				   },
 				   {
-					   name: 'questions',
-					   value: questions
+					   name: 'message',
+					   value: message
+				   },
+				   {
+					   name: 'attachment',
+					   value: data
 				   }
 			   ],
                success: function (response) {
@@ -173,9 +186,9 @@ function send_form () {
 					$("#name_notification").show();
 					$("#name").css('background-color', '#E4E4E4');
 			   }
-			   if ($("#email").val().length < 1) {
-					$("#email_notification").show();
-					$("#email").css('background-color', '#E4E4E4');
+			   if ($("#from").val().length < 1) {
+					$("#from_notification").show();
+					$("#from").css('background-color', '#E4E4E4');
 			   }
 			   if ($("#url").val().length <= 7) {
 					$("#url_notification").show();
@@ -185,9 +198,9 @@ function send_form () {
 					$("#subject_notification").show();
 					$("#subject").css('background-color', '#E4E4E4');
 			   }
-			   if ($("#questions").val().length < 1) {
-					$("#questions_notification").show();
-					$("#questions").css('background-color', '#E4E4E4');
+			   if ($("#message").val().length < 1) {
+					$("#message_notification").show();
+					$("#message").css('background-color', '#E4E4E4');
 			   }
        }
 }
