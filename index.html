@@ -34,20 +34,117 @@
     <label for="subject">Betreff*</label>
     <select name="subject" id="subject" onchange="subject_validation();">
     	<option value="">Betreff waehlen</option>
-    	<option value="general">General Question</option>
-        <option value="elements">Features and Elements</option>
-        <option value="payment">Billing</option>
-        <option value="domaintransfer">Domain Transfer</option>
-        <option value="domainsgeneral">General Questions about Domains</option>
-        <option value="emailaccounts">Email Addresses</option>
-        <option value="bugreport">Error Message</option>
-        <option value="shop">Store</option>
-        <option value="widgets">Widgets &amp; External Services</option>
-        <option value="cancellation">Cancellation</option>
-        <option value="feedback">Suggestions</option>
+    	<option value="login">Login und Passwort</option><!-- help -->
+        <option value="presales">Fragen vor dem Kauf</option><!-- help -->
+        <option value="testversion">Kostenlose Testversion</option><!-- help -->
+        <option value="domainsgeneral">Domain Transfer</option><!-- help -->
+        <option value="emailaccounts">Emails & Co</option><!-- help -->
+        <option value="seo">Suchmaschinen</option><!-- help -->
+        <option value="payment">Vertrag & Zahlung</option><!-- help -->
+        <option value="cancellation">Kündigung</option><!-- help -->
+        <option value="elements">Features und Elemente</option>
+        <option value="bugreport">Fehlermeldungen</option>
+        <option value="shop">Shop</option>
+        <option value="widgets">Widgets & Dienstleisungen von Drittanbietern</option>
+        <option value="feedback">Feedback</option>
+        <option value="general">Sonstiges</option><!-- help -->
     </select>
     <div class="notification" id="subject_notification">Bitte waehle ein Betreff ein</div>
     </div>
+    
+    <div class="faqs" id="login">
+    <div class="title">Haeufig gestellte Fragen zum Thema Login und Passwort:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/" target="_blank">Wo kann ich mich auf meiner Seite anmelden?</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/h%C3%A4ufige-probleme/" target="_blank">Ich habe mein Passwort vergessen.</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/passwort/" target="_blank">Ich möchte mein Passwort ändern.</a></li>
+    </ul>
+    </div>
+    
+    <div class="faqs" id="presales">
+    <div class="title">Haeufig gestellte Fragen zum Thema Fragen vor dem Kauf:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/presale-faq/#zahlungsmethoden" target="_blank">Welche Zahlungsmethoden stehen zur Verfügung?</a></li>
+        <li><a href="http://hilfe.jimdo.com/presale-faq/#zahlungszeitraum" target="_blank">Wann ist die Zahlung fällig?</a></li>
+        <li><a href="http://de.jimdo.com/preise/vergleich" target="_blank">Was ist das richtige Paket für mich?</a></li>
+        <li><a href="http://hilfe.jimdo.com/presale-faq/#domainumzug" target="_blank">Kann ich meine bereits registrierte Domain für mein JimdoPro/Business Paket nutzen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/presale-faq/#free-upgrade" target="_blank">Wie kann ich meine bestehende JimdoPro Seite upgraden?</a></li>
+     </ul>
+    </div>
+    
+    <div class="faqs" id="testversion">
+    <div class="title">Haeufig gestellte Fragen zum Thema Kostenlose Testversion:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Ist die Testversion wirklich kostenlos?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Muss ich die Testversion kündigen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Was passiert am Ende des Testzeitraums?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Welche Funktionen sind in der Testversion enthalten?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Wie erhalte ich meine Domain und Domain E-Mail-Konten?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Kann ich während des Testzeitraums auf das reguläre JimdoPro oder JimdoBusiness Paket umsteigen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Wie kann ich JimdoPro kostenlos testen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Wie kann ich JimdoBusiness kostenlos testen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/kontakt/kostenlose-testversion/#more" target="_blank">Wie kann ich JimdoPro oder JimdoBusiness mit meiner bereits bestehen JimdoFree Seite testen?</a></li>
+    </ul>
+    </div>
+        
+    <div class="faqs" id="domainsgeneral">
+    <div class="title">Haeufig gestellte Fragen zum Thema Domain Transfer:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/domains/transfer-einer-domain-zu-jimdo/" target="_blank">Ich habe bereits eine Domain und möchte diese mit meiner Jimdo Seite nutzen.</a></li>
+        <li><a href="http://hilfe.jimdo.com/domains/transfer-einer-domain-zu-jimdo/" target="_blank">Was passiert mit meiner E-Mail Adresse wenn ich meine Domain zu Jimdo umziehen möchte?</a></li>
+        <li><a href="http://hilfe.jimdo.com/domains/bestellung-einer-domain/zusatzdomains/" target="_blank">Kann ich weitere Domains für meine Seite bestellen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/domains/erg%C3%A4nzende-informationen-zu-domains/domain-%C3%A4ndern/" target="_blank">Ich möchte meine Domain ändern.</a></li>
+    </ul>
+    </div>
+    
+    <div class="faqs" id="emailaccounts">
+    <div class="title">Haeufig gestellte Fragen zum Thema E-Mails & Co:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/e-mail/grundlagen/e-mail-konto-einrichten/" target="_blank">Wie richte ich ein E-Mail Konto ein?</a></li>
+        <li><a href="http://hilfe.jimdo.com/e-mail/grundlagen/e-mail-weiterleitung-alias/" target="_blank">Wie kann ich E-Mails weiterleiten?</a></li>
+        <li><a href="http://hilfe.jimdo.com/e-mail/mailprogramme/" target="_blank">Wie kann ich mein Konto in meinem Mailprogramm abrufen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/e-mail/mailprogramme/" target="_blank">Wie kann ich meine Mails auf meinem Smartphone abrufen?</a></li>
+    </ul>
+    </div>
+    
+    <div class="faqs" id="seo">
+    <div class="title">Haeufig gestellte Fragen zum Thema Suchmaschinen:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/basiswissen/h%C3%A4ufige-fragen/google/" target="_blank">Warum wird meine Seite nicht bei Google & Co gefunden?</a></li>
+        <li><a href="http://hilfe.jimdo.com/seo/was-ist-suchmaschinenoptimierung/" target="_blank">Wie kann ich meine Seite für Suchmaschinen optimieren?</a></li>
+        <li><a href="http://hilfe.jimdo.com/seo/kostenlose-tools/keyword-recherche/" target="_blank">Wie finde ich die richtigen Keywords für meine Seite?</a></li>
+        <li><a href="http://hilfe.jimdo.com/seo/kostenlose-tools/google-webmaster-tools/" target="_blank">Wie melde ich meine Seite bei den Google Webmaster Tools an?</a></li>
+    </ul>
+    </div>
+    
+    <div class="faqs" id="payment">
+    <div class="title">Haeufig gestellte Fragen zum Thema Zahlung & Vertrag:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/zahlung-vertrag/zahlungsinformationen/" target="_blank">Wie erfolgt die Zahlung für mein Jimdo Paket?</a></li>
+    </ul>
+    </div>
+    
+    <div class="faqs" id="cancellation">
+    <div class="title">Haeufig gestellte Fragen zum Thema Kündigung:</div>
+    <ul class="faqs_questions">
+        <li><a href="http://hilfe.jimdo.com/zahlung-vertrag/k%C3%BCndigung/" target="_blank">Was muss ich bei einer Kündigung beachten?</a></li>
+        <li><a href="http://hilfe.jimdo.com/zahlung-vertrag/k%C3%BCndigung/" target="_blank">Was passiert mit meiner Seite wenn ich diese kündige?</a></li>
+    </ul>
+    </div>
+    
+    <div class="faqs" id="general">
+    <div class="title">Haeufig gestellte Fragen zum Thema Sonstiges:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/basiswissen/h%C3%A4ufige-fragen/mehrsprachige-seite/" target="_blank">Wie kann ich meine Seite mehrsprachig gestalten?</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/h%C3%A4ufige-fragen/systemanforderungen/" target="_blank">Systemanforderungen bei Jimdo</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/h%C3%A4ufige-fragen/jimdo-seite-l%C3%B6schen/" target="_blank">Wo kann ich meine JimdoFree Seite löschen?</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/h%C3%A4ufige-fragen/" target="_blank">Weitere häufige Fragen</a></li>
+    </ul>
+    </div>
+    
+    
+    
+    
     <div class="input_field">
     <label for="message">Nachricht*</label>
     <textarea name="message" id="message" rows="8" onchange="message_validation();"></textarea>

@@ -1,4 +1,5 @@
 $().ready(function() {
+	//Validation
 	$("#confirmation_notification").hide();
 	$("#error_notification").hide();
 	$("#name_notification").hide();
@@ -8,6 +9,17 @@ $().ready(function() {
 	$("#package_information").hide();
 	$("#subject_notification").hide();
 	$("#message_notification").hide();
+	
+	//FAQs
+	$("#login").hide();
+	$("#presales").hide();
+	$("#testversion").hide();
+	$("#domainsgeneral").hide();
+	$("#emailaccounts").hide();
+	$("#seo").hide();
+	$("#payment").hide();
+	$("#cancellation").hide();
+	$("#general").hide();	
 });
 
 function name_validation() {
@@ -87,9 +99,54 @@ function subject_validation() {
 	if ($("#subject").val().length < 1) {
 	   	$("#subject_notification").show();
 		$("#subject").css('background-color', '#E4E4E4');
+		$("#login").hide();
+		$("#presales").hide();
+		$("#testversion").hide();
+		$("#domainsgeneral").hide();
+		$("#emailaccounts").hide();
+		$("#seo").hide();
+		$("#payment").hide();
+		$("#cancellation").hide();
+		$("#general").hide();	
 	} else {
         $("#subject_notification").hide();
 		$("#subject").css('background-color', '#FFF');
+		
+		if ($("#subject").val() == 'login') {
+			$("#login").show();
+		} else $("#login").hide();
+		
+		if ($("#subject").val() == 'presales') {
+			$("#presales").show();
+		} else $("#presales").hide();
+		
+		if ($("#subject").val() == 'testversion') {
+			$("#testversion").show();
+		} else $("#testversion").hide();
+		
+		if ($("#subject").val() == 'domainsgeneral') {
+			$("#domainsgeneral").show();
+		} else $("#domainsgeneral").hide();
+		
+		if ($("#subject").val() == 'emailaccounts') {
+			$("#emailaccounts").show();
+		} else $("#emailaccounts").hide();
+		
+		if ($("#subject").val() == 'seo') {
+			$("#seo").show();
+		} else $("#seo").hide();
+		
+		if ($("#subject").val() == 'payment') {
+			$("#payment").show();
+		} else $("#payment").hide();
+		
+		if ($("#subject").val() == 'cancellation') {
+			$("#cancellation").show();
+		} else $("#cancellation").hide();
+		
+		if ($("#subject").val() == 'general') {
+			$("#general").show();
+		} else $("#general").hide();
   	}
 }
 function message_validation(){

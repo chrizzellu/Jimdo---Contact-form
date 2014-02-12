@@ -23,7 +23,6 @@ body {
 a {
 	text-decoration: none;
 	color: #333;
-	font-weight: bold;
 }
 
 @media all and  (min-width: 980px) {
@@ -33,6 +32,34 @@ a {
 	padding: 0 10px 0 10px;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
+}
+.faqs {
+	overflow:hidden;
+}
+.faqs .title {
+	float:left;
+	width: 40%;
+	margin: 0 10px 0 10px;
+	color: #0099ee;
+}
+ul.faqs_questions {
+	float: right;
+	width: 50%;
+	margin: 0;
+}
+ul.faqs_questions li{
+	list-style-position: outside;
+	list-style-type: square;	
+	margin-left: -5px;
+	margin: 0 0 10px -5px;
+}
+ul.faqs_questions li a{
+	text-decoration: underline;
+	color: #0099ee;
+}
+ul.faqs_questions li a:hover{
+	text-decoration: none;
+	color: #333;
 }
 .confirmation_notification {
 	margin-top: 100px;
@@ -46,7 +73,7 @@ a {
 }
 .input_field_wrapper_float_left_right .notification{
 	padding-left:10px;
-	color: #4898bb;
+	color: #0099ee;
 }
 .input_field_wrapper_float_left_right .input_field {
 	padding-bottom:10px;
@@ -104,13 +131,13 @@ a {
 	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	border: 1px solid #4898bb;
+	border: 1px solid #0077B9;
 	color: #fff;
-	background-color:#67b2d9;
+	background-color:#0099ee;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
-	background-color:#4E8EAF;
+	background-color:#0082CA;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].grey {
 	border: 1px solid #919191;
@@ -130,6 +157,34 @@ a {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
 }
+.faqs {
+	overflow:hidden;
+}
+.faqs .title {
+	float:left;
+	width: 40%;
+	margin: 0 10px 0 10px;
+	color: #0099ee;
+}
+ul.faqs_questions {
+	float: right;
+	width: 50%;
+	margin: 0;
+}
+ul.faqs_questions li{
+	list-style-position: outside;
+	list-style-type: square;	
+	margin-left: -5px;
+	margin: 0 0 10px -5px;
+}
+ul.faqs_questions li a{
+	text-decoration: none;
+	color: #0099ee;
+}
+ul.faqs_questions li a:hover{
+	text-decoration: none;
+	color: #333;
+}
 .confirmation_notification {
 	margin-top: 100px;
 }
@@ -142,7 +197,7 @@ a {
 }
 .input_field_wrapper_float_left_right .notification{
 	padding-left:10px;
-	color: #4898bb;
+	color: #0099ee;
 }
 .input_field_wrapper_float_left_right .input_field {
 	padding-bottom:10px;
@@ -200,13 +255,13 @@ a {
 	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	border: 1px solid #4898bb;
+	border: 1px solid #0077B9;
 	color: #fff;
-	background-color:#67b2d9;
+	background-color:#0099ee;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
-	background-color:#4E8EAF;
+	background-color:#0082CA;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].grey {
 	border: 1px solid #919191;
@@ -226,6 +281,35 @@ a {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
 }
+.faqs {
+	overflow:hidden;
+}
+.faqs .title {
+	float: left;
+	width: 90%;
+	margin: 0 10px 10px 15px;
+	color: #0099ee;
+	font-weight: bold;
+}
+ul.faqs_questions {
+	float: left;
+	width: 85%;
+	margin: 0;
+}
+ul.faqs_questions li{
+	list-style-position: outside;
+	list-style-type: square;	
+	margin-left: -5px;
+	margin: 0 0 15px -5px;
+}
+ul.faqs_questions li a{
+	text-decoration: none;
+	color: #0099ee;
+}
+ul.faqs_questions li a:hover{
+	text-decoration: none;
+	color: #333;
+}
 .confirmation_notification {
 	margin-top: 100px;
 }
@@ -238,7 +322,7 @@ a {
 }
 .input_field_wrapper_float_left_right .notification{
 	padding-left:10px;
-	color: #4898bb;
+	color: #0099ee;
 	float: right;
 	padding-right: 25px;
 	margin-top: -14px;
@@ -252,6 +336,7 @@ a {
     text-align:left;
 	float:left;
 	margin-left:15px;
+	font-weight: bold;
 }
 .input_field_wrapper_float_left_right .input_field input {
 	float: left;
@@ -290,7 +375,7 @@ a {
 	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit] {
-	float:right;
+	float:left;
 	width:90%;
 	padding: 10px;
 	font-size: 16px;
@@ -298,13 +383,13 @@ a {
 	outline: none;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	border: 1px solid #4898bb;
+	border: 1px solid #0077B9;
 	color: #fff;
-	background-color:#67b2d9;
+	background-color:#0099ee;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
-	background-color:#4E8EAF;
+	background-color:#0082CA;
 }
 .input_field_wrapper_float_left_right .input_field input[type=submit].grey {
 	border: 1px solid #919191;
