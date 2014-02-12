@@ -18,388 +18,459 @@ body {
 	line-height: 1.6rem;
 	color: #555;
 	font-weight: 200;
-	min-height:100%;
+	min-height: 100%;
 }
+
 a {
 	text-decoration: none;
 	color: #333;
 }
 
 @media all and  (min-width: 980px) {
-.page_wrapper {
-	width: 960px;
-	margin:auto;
-	padding: 0 10px 0 10px;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-}
-.faqs {
-	overflow:hidden;
-}
-.faqs .title {
-	float:left;
-	width: 40%;
-	margin: 0 10px 0 10px;
-	color: #0099ee;
-}
-ul.faqs_questions {
-	float: right;
-	width: 50%;
-	margin: 0;
-}
-ul.faqs_questions li{
-	list-style-position: outside;
-	list-style-type: square;	
-	margin-left: -5px;
-	margin: 0 0 10px -5px;
-}
-ul.faqs_questions li a{
-	text-decoration: underline;
-	color: #0099ee;
-}
-ul.faqs_questions li a:hover{
-	text-decoration: none;
-	color: #333;
-}
-.confirmation_notification {
-	margin-top: 100px;
-}
-.error_notification {
-	margin-top: 100px;
-	color:#C33;
-}
-.input_field_wrapper_float_left_right {
-	margin-top:15px;
-}
-.input_field_wrapper_float_left_right .notification{
-	padding-left:10px;
-	color: #0099ee;
-}
-.input_field_wrapper_float_left_right .input_field {
-	padding-bottom:10px;
-	overflow:hidden;
-}
-.input_field_wrapper_float_left_right .input_field label {
-	width:45%;
-    clear:left;
-    text-align:left;
-	float:left;
-	margin-left:10px;
-}
-.input_field_wrapper_float_left_right .input_field input {
-	float:right;
-	width:50%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	margin: 0;
-	color: #333;
-	font-size: 14px;
-	padding: 10px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field select {
-	float: right;
-	width: 52.3%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	margin: 0;
-	color: #333;
-	font-size: 14px;
-	height: 39px;
-	padding: 10px;
-	-webkit-appearance: none;
-	border-radius: 0px;
-	outline: none;
-} 
-.input_field_wrapper_float_left_right .input_field textarea {
-	float:right;
-	width:50%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	margin: 0;
-	color: #333;
-	font-size: 14px;
-	padding: 10px;
-	outline: none;
-} 
-.input_field_wrapper_float_left_right .input_field input[type=submit] {
-	float:right;
-	width:25%;
-	padding: 10px;
-	font-size: 16px;
-	text-decoration: none;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	border: 1px solid #0077B9;
-	color: #fff;
-	background-color:#0099ee;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
+	.page_wrapper {
+		width: 960px;
+		margin: auto;
+		padding: 0 10px 0 10px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.faqs {
+		overflow: hidden;
+	}
+
+	.faqs .title {
+		float: left;
+		width: 40%;
+		margin: 0 10px 0 10px;
+		color: #0099ee;
+		font-weight: bold;
+	}
+
+	ul.faqs_questions {
+		float: right;
+		width: 50%;
+		margin: 0;
+	}
+
+	ul.faqs_questions li {
+		list-style-position: outside;
+		list-style-type: square;
+		margin-left: -5px;
+		margin: 0 0 10px -5px;
+	}
+
+	ul.faqs_questions li a {
+		text-decoration: underline;
+		color: #0099ee;
+	}
+
+	ul.faqs_questions li a:hover {
+		text-decoration: none;
+		color: #333;
+	}
+
+	.confirmation_notification {
+		margin-top: 100px;
+	}
+
+	.error_notification {
+		margin-top: 100px;
+		color: #C33;
+	}
+
+	.input_field_wrapper_float_left_right {
+		margin-top: 15px;
+	}
+
+	.input_field_wrapper_float_left_right .notification {
+		padding-left: 10px;
+		color: #0099ee;
+	}
+
+	.input_field_wrapper_float_left_right .input_field {
+		padding-bottom: 10px;
+		overflow: hidden;
+	}
+
+	.input_field_wrapper_float_left_right .input_field label {
+		width: 45%;
+		clear: left;
+		text-align: left;
+		float: left;
+		margin-left: 10px;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input {
+		float: right;
+		width: 50%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		margin: 0;
+		color: #333;
+		font-size: 14px;
+		padding: 10px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field select {
+		float: right;
+		width: 52.3%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		margin: 0;
+		color: #333;
+		font-size: 14px;
+		height: 39px;
+		padding: 10px;
+		-webkit-appearance: none;
+		border-radius: 0px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field textarea {
+		float: right;
+		width: 50%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		margin: 0;
+		color: #333;
+		font-size: 14px;
+		padding: 10px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit] {
+		float: right;
+		width: 25%;
+		padding: 10px;
+		font-size: 16px;
+		text-decoration: none;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
+		border: 1px solid #0077B9;
+		color: #fff;
+		background-color: #0099ee;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
-	background-color:#0082CA;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
-	border: 1px solid #919191;
-	color: #fff;
-	background-color:#CACACA;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
+		background-color: #0082CA;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
+		border: 1px solid #919191;
+		color: #fff;
+		background-color: #CACACA;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover {
-	background-color:#A0A0A0;
+		background-color: #A0A0A0;
+	}
 }
-}
+
 @media all and (max-width: 979px) and (min-width: 580px) {
-.page_wrapper {
-	width: 95%;
-	margin: auto;
-	padding: 0 10px 0 10px;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-}
-.faqs {
-	overflow:hidden;
-}
-.faqs .title {
-	float:left;
-	width: 40%;
-	margin: 0 10px 0 10px;
-	color: #0099ee;
-}
-ul.faqs_questions {
-	float: right;
-	width: 50%;
-	margin: 0;
-}
-ul.faqs_questions li{
-	list-style-position: outside;
-	list-style-type: square;	
-	margin-left: -5px;
-	margin: 0 0 10px -5px;
-}
-ul.faqs_questions li a{
-	text-decoration: none;
-	color: #0099ee;
-}
-ul.faqs_questions li a:hover{
-	text-decoration: none;
-	color: #333;
-}
-.confirmation_notification {
-	margin-top: 100px;
-}
-.error_notification {
-	margin-top: 100px;
-	color:#C33;
-}
-.input_field_wrapper_float_left_right {
-	margin-top:15px;
-}
-.input_field_wrapper_float_left_right .notification{
-	padding-left:10px;
-	color: #0099ee;
-}
-.input_field_wrapper_float_left_right .input_field {
-	padding-bottom:10px;
-	overflow:hidden;
-}
-.input_field_wrapper_float_left_right .input_field label {
-	width:45%;
-    clear:left;
-    text-align:left;
-	float:left;
-	margin-left:10px;
-}
-.input_field_wrapper_float_left_right .input_field input {
-	float:right;
-	width:50%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	margin: 0;
-	color: #333;
-	font-size: 14px;
-	padding: 10px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field select {
-	float: right;
-	width: 53%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	margin: 0;
-	color: #333;
-	font-size: 14px;
-	height: 39px;
-	padding: 10px;
-	-webkit-appearance: none;
-	border-radius: 0px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field textarea {
-	float:right;
-	width:50%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	margin: 0;
-	color: #333;
-	font-size: 14px;
-	padding: 10px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit] {
-	float:right;
-	width:52%;
-	padding: 10px;
-	font-size: 16px;
-	text-decoration: none;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	border: 1px solid #0077B9;
-	color: #fff;
-	background-color:#0099ee;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
+	.page_wrapper {
+		width: 95%;
+		margin: auto;
+		padding: 0 10px 0 10px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.faqs {
+		overflow: hidden;
+	}
+
+	.faqs .title {
+		float: left;
+		width: 40%;
+		margin: 0 10px 0 10px;
+		color: #0099ee;
+		font-weight: bold;
+	}
+
+	ul.faqs_questions {
+		float: right;
+		width: 50%;
+		margin: 0;
+	}
+
+	ul.faqs_questions li {
+		list-style-position: outside;
+		list-style-type: square;
+		margin-left: -5px;
+		margin: 0 0 10px -5px;
+	}
+
+	ul.faqs_questions li a {
+		text-decoration: none;
+		color: #0099ee;
+	}
+
+	ul.faqs_questions li a:hover {
+		text-decoration: none;
+		color: #333;
+	}
+
+	.confirmation_notification {
+		margin-top: 100px;
+	}
+
+	.error_notification {
+		margin-top: 100px;
+		color: #C33;
+	}
+
+	.input_field_wrapper_float_left_right {
+		margin-top: 15px;
+	}
+
+	.input_field_wrapper_float_left_right .notification {
+		padding-left: 10px;
+		color: #0099ee;
+	}
+
+	.input_field_wrapper_float_left_right .input_field {
+		padding-bottom: 10px;
+		overflow: hidden;
+	}
+
+	.input_field_wrapper_float_left_right .input_field label {
+		width: 45%;
+		clear: left;
+		text-align: left;
+		float: left;
+		margin-left: 10px;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input {
+		float: right;
+		width: 50%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		margin: 0;
+		color: #333;
+		font-size: 14px;
+		padding: 10px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field select {
+		float: right;
+		width: 53%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		margin: 0;
+		color: #333;
+		font-size: 14px;
+		height: 39px;
+		padding: 10px;
+		-webkit-appearance: none;
+		border-radius: 0px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field textarea {
+		float: right;
+		width: 50%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		margin: 0;
+		color: #333;
+		font-size: 14px;
+		padding: 10px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit] {
+		float: right;
+		width: 52%;
+		padding: 10px;
+		font-size: 16px;
+		text-decoration: none;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
+		border: 1px solid #0077B9;
+		color: #fff;
+		background-color: #0099ee;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
-	background-color:#0082CA;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
-	border: 1px solid #919191;
-	color: #fff;
-	background-color:#CACACA;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
+		background-color: #0082CA;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
+		border: 1px solid #919191;
+		color: #fff;
+		background-color: #CACACA;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover {
-	background-color:#A0A0A0;
+		background-color: #A0A0A0;
+	}
 }
 
-}
 @media all and (max-width: 579px) {
-.page_wrapper {
-	width: 100%;
-	margin: auto;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-}
-.faqs {
-	overflow:hidden;
-}
-.faqs .title {
-	float: left;
-	width: 90%;
-	margin: 0 10px 10px 15px;
-	color: #0099ee;
-	font-weight: bold;
-}
-ul.faqs_questions {
-	float: left;
-	width: 85%;
-	margin: 0;
-}
-ul.faqs_questions li{
-	list-style-position: outside;
-	list-style-type: square;	
-	margin-left: -5px;
-	margin: 0 0 15px -5px;
-}
-ul.faqs_questions li a{
-	text-decoration: none;
-	color: #0099ee;
-}
-ul.faqs_questions li a:hover{
-	text-decoration: none;
-	color: #333;
-}
-.confirmation_notification {
-	margin-top: 100px;
-}
-.error_notification {
-	margin-top: 100px;
-	color:#C33;
-}
-.input_field_wrapper_float_left_right {
-	margin-top:15px;
-}
-.input_field_wrapper_float_left_right .notification{
-	padding-left:10px;
-	color: #0099ee;
-	float: right;
-	padding-right: 25px;
-	margin-top: -14px;
-}
-.input_field_wrapper_float_left_right .input_field {
-	overflow:hidden;
-}
-.input_field_wrapper_float_left_right .input_field label {
-	width:83%;
-    clear:left;
-    text-align:left;
-	float:left;
-	margin-left:15px;
-	font-weight: bold;
-}
-.input_field_wrapper_float_left_right .input_field input {
-	float: left;
-	width: 85%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	color: #333;
-	font-size: 14px;
-	padding: 10px;
-	margin: 0px 15px 15px 15px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field select {
-	float: right;
-	width: 90%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	color: #333;
-	font-size: 14px;
-	height: 39px;
-	padding: 10px;
-	-webkit-appearance: none;
-	border-radius: 0px;
-	margin: 0px 23px 15px 15px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field textarea {
-	float: left;
-	width: 85%;
-	background-color: #FFF;
-	border: 1px solid #ccc;
-	color: #333;
-	font-size: 14px;
-	padding: 10px;
-	margin: 0px 15px 15px 15px;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit] {
-	float:left;
-	width:90%;
-	padding: 10px;
-	font-size: 16px;
-	text-decoration: none;
-	outline: none;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
-	border: 1px solid #0077B9;
-	color: #fff;
-	background-color:#0099ee;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
+	.page_wrapper {
+		width: 100%;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.faqs {
+		overflow: hidden;
+	}
+
+	.faqs .title {
+		float: left;
+		width: 90%;
+		margin: 0 10px 10px 15px;
+		color: #0099ee;
+		font-weight: bold;
+	}
+
+	ul.faqs_questions {
+		float: left;
+		width: 85%;
+		margin: 0;
+	}
+
+	ul.faqs_questions li {
+		list-style-position: outside;
+		list-style-type: square;
+		margin-left: -5px;
+		margin: 0 0 15px -5px;
+	}
+
+	ul.faqs_questions li a {
+		text-decoration: none;
+		color: #0099ee;
+	}
+
+	ul.faqs_questions li a:hover {
+		text-decoration: none;
+		color: #333;
+	}
+
+	.confirmation_notification {
+		margin-top: 100px;
+	}
+
+	.error_notification {
+		margin-top: 100px;
+		color: #C33;
+	}
+
+	.input_field_wrapper_float_left_right {
+		margin-top: 15px;
+	}
+
+	.input_field_wrapper_float_left_right .notification {
+		padding-left: 10px;
+		color: #0099ee;
+		float: right;
+		padding-right: 25px;
+		margin-top: -14px;
+	}
+
+	.input_field_wrapper_float_left_right .input_field {
+		overflow: hidden;
+	}
+
+	.input_field_wrapper_float_left_right .input_field label {
+		width: 83%;
+		clear: left;
+		text-align: left;
+		float: left;
+		margin-left: 15px;
+		font-weight: bold;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input {
+		float: left;
+		width: 85%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		color: #333;
+		font-size: 14px;
+		padding: 10px;
+		margin: 0px 15px 15px 15px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field select {
+		float: right;
+		width: 90%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		color: #333;
+		font-size: 14px;
+		height: 39px;
+		padding: 10px;
+		-webkit-appearance: none;
+		border-radius: 0px;
+		margin: 0px 23px 15px 15px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field textarea {
+		float: left;
+		width: 85%;
+		background-color: #FFF;
+		border: 1px solid #ccc;
+		color: #333;
+		font-size: 14px;
+		padding: 10px;
+		margin: 0px 15px 15px 15px;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit] {
+		float: left;
+		width: 90%;
+		padding: 10px;
+		font-size: 16px;
+		text-decoration: none;
+		outline: none;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].blue {
+		border: 1px solid #0077B9;
+		color: #fff;
+		background-color: #0099ee;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].blue:hover {
-	background-color:#0082CA;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
-	border: 1px solid #919191;
-	color: #fff;
-	background-color:#CACACA;
-}
-.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
+		background-color: #0082CA;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].grey {
+		border: 1px solid #919191;
+		color: #fff;
+		background-color: #CACACA;
+	}
+
+	.input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover,
 .input_field_wrapper_float_left_right .input_field input[type=submit].grey:hover {
-	background-color:#A0A0A0;
-}
-
-
+		background-color: #A0A0A0;
+	}
 }

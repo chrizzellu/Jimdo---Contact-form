@@ -15,22 +15,6 @@
 <div class="error_notification" id="error_notification">Beim Versenden deiner Anfrage ist leider ein Fehler aufgetreten. Versuche es bitte spaeter nochmal</div>
 <div class="input_field_wrapper_float_left_right" id="contact_form">
     <div class="input_field">
-    <label for="name">Dein vollstaendiger Name*</label>
-    <input type="text" id="name" name="name" onchange="name_validation();" />
-    <div class="notification" id="name_notification">Bitte gib deinen vollstaendigen Namen ein</div>
-    </div>
-    <div class="input_field">
-    <label for="from">Deine Emailadresse*</label>
-    <input type="email" id="from" name="from" onchange="email_validation();" />
-    <div class="notification" id="from_notification">Bitte gib eine valide Emailaddresse ein</div>
-    </div>
-    <div class="input_field">
-    <label for="url">Link deiner Jimdo Webseite*</label>
-    <input type="url" id="url" name="url" onchange="package_validation();" />
-    <div class="notification" id="url_notification">Bitte gib eine Website-Addresse ein</div>
-    <div class="notification" id="package_information"></div>
-    </div>
-    <div class="input_field">
     <label for="subject">Betreff*</label>
     <select name="subject" id="subject" onchange="subject_validation();">
     	<option value="">Betreff waehlen</option>
@@ -51,16 +35,6 @@
     </select>
     <div class="notification" id="subject_notification">Bitte waehle ein Betreff ein</div>
     </div>
-    
-    <div class="faqs" id="login">
-    <div class="title">Haeufig gestellte Fragen zum Thema Login und Passwort:</div>
-    <ul class="faqs_questions">
-    	<li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/" target="_blank">Wo kann ich mich auf meiner Seite anmelden?</a></li>
-        <li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/h%C3%A4ufige-probleme/" target="_blank">Ich habe mein Passwort vergessen.</a></li>
-        <li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/passwort/" target="_blank">Ich möchte mein Passwort ändern.</a></li>
-    </ul>
-    </div>
-    
     <div class="faqs" id="presales">
     <div class="title">Haeufig gestellte Fragen zum Thema Fragen vor dem Kauf:</div>
     <ul class="faqs_questions">
@@ -141,10 +115,30 @@
         <li><a href="http://hilfe.jimdo.com/basiswissen/h%C3%A4ufige-fragen/" target="_blank">Weitere häufige Fragen</a></li>
     </ul>
     </div>
-    
-    
-    
-    
+    <div class="input_field">
+    <label for="url">Link deiner Jimdo Webseite*</label>
+    <input type="url" id="url" name="url" onchange="package_validation();" />
+    <div class="notification" id="url_notification">Bitte gib eine Website-Addresse ein</div>
+    <div class="notification" id="package_information"></div>
+    </div>
+    <div class="input_field">
+    <label for="from">Deine Emailadresse*</label>
+    <input type="email" id="from" name="from" onchange="email_validation();" />
+    <div class="notification" id="from_notification">Bitte gib eine valide Emailaddresse ein</div>
+    </div>
+    <div class="input_field">
+    <label for="name">Dein vollstaendiger Name*</label>
+    <input type="text" id="name" name="name" onchange="name_validation();" />
+    <div class="notification" id="name_notification">Bitte gib deinen vollstaendigen Namen ein</div>
+    </div>
+    <div class="faqs" id="login">
+    <div class="title">Haeufig gestellte Fragen zum Thema Login und Passwort:</div>
+    <ul class="faqs_questions">
+    	<li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/" target="_blank">Wo kann ich mich auf meiner Seite anmelden?</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/h%C3%A4ufige-probleme/" target="_blank">Ich habe mein Passwort vergessen.</a></li>
+        <li><a href="http://hilfe.jimdo.com/basiswissen/anmeldung/passwort/" target="_blank">Ich möchte mein Passwort ändern.</a></li>
+    </ul>
+    </div>
     <div class="input_field">
     <label for="message">Nachricht*</label>
     <textarea name="message" id="message" rows="8" onchange="message_validation();"></textarea>
