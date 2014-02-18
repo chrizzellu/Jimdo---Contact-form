@@ -1,0 +1,47 @@
+#support_contact_form_wrapper {
+    font-family: Helvetica, Arial , sans-serif;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #555;
+    text-decoration: none;
+    min-height:100%;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.support_contact_form_label {
+    width: 300px;
+    float: left;
+}
+
+.support_contact_form_input {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.support_contact_form_input_field {
+    width: 600px;
+    height: 25px;
+    float: left;
+}
+
+.support_contact_form_input_area {
+    float: left;
+    width: 690px;
+    height: 200px;
+}
+
+#support_contact_form_submit {
+    float: right;
+}
+
+#support_contact_form_submit_button {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    outline: none;
+    border: 1px solid #0077B9;
+    color: #fff;
+    background-color: #0099ee;
+}
