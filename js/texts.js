@@ -20,8 +20,6 @@ var main_german = [
         "text": "Deine Nachricht"
     }
 ];
-
-
 var subjects_german = [
     {
         "key": "choose_subject",
@@ -84,3 +82,12 @@ var subjects_german = [
         "text": "Sonstiges"
     }
 ];
+var button_german = "Senden";
+
+var texts = {
+    "de_DE" : {
+        "main" : main_german,
+        "subjects" : subjects_german,
+        "button" : button_german
+    }
+};
