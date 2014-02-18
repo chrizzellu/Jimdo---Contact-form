@@ -88,34 +88,14 @@
                 url: "http://mgmt.jimdo.dev/api/support/sendmail",
                 dataType: "json",
                 data: {
-                    'name': name,
-                    'from': email,
-                    'url': url,
-                    'subject': subject,
-                    'message': message
-                },
-
-                success: function (response) {
-                    var jsn = $.parseJSON(response);
-                    console.log('send', jsn);
-                    if (jsn.success) {
-                        var responseData = jsn.data.value;
-                        if (responseData.send_notification) {
-                            console.log('Success sending form');
-                            console.log(responseData.send_notification);
-                            console.log(responseData.package);
-                            $("#contact_form").hide();
-                            $("#confirmation_notification").show();
-                        }
-                    }
-                    else {
-                        console.log('Error sending form');
-                        $("#contact_form").hide();
-                        $("#error_notification").show();
-
-                    }
+                    'name': validateName(),
+                    'from': validateEmail(),
+                    'url': validateUrl(),
+                    'subject': $('#support_contact_form_subject').val(),
+                    'message': $('#support_contact_form_message_input_area').val()
                 }
-            });
+            }
+        );
     };
 
     $().ready(function () {
@@ -129,11 +109,15 @@
             populateFaq(texts[locale].faq[key]);
         });
 
+        $('#support_contact_form_mail_input').on('change', function (e) {
+            
+
+        });
+
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
             if (validateForm(texts[locale].notifications)) {
-                $('#support_contact_form')
                 formSubmit();
             }
         })
