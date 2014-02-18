@@ -4,14 +4,14 @@ if(
 	isset ($_POST['name']) &&
 	isset ($_POST['email']) &&
 	isset ($_POST['url']) &&
-	isset ($_POST['subject']) &&
+	isset ($_POST['subjects']) &&
 	isset ($_POST['questions'])
 	
 	) {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$url = $_POST['url'];
-		$subject = $_POST['subject'];
+		$subject = $_POST['subjects'];
 		$questions = $_POST['questions'];
 		
 		$mgmt_url = 'http://mgmt...'; //placeholder

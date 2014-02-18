@@ -20,7 +20,7 @@
 }
 
 .support_contact_form_input_field {
-    width: 600px;
+    width: 550px;
     height: 25px;
     float: left;
     font-size: 1rem;
@@ -57,4 +57,13 @@
 
 .support_contact_form_faq {
     margin-bottom: 10px;
+}
+
+.support_contact_form_notification {
+    margin-left: 5px;
+    float: left;
+    width: 125px;
+    font-size: 70%;
+    font-weight: 700;
+    color: #C80000;
 }

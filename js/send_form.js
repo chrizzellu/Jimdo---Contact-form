@@ -84,12 +84,12 @@ function package_validation() {
        }
 }
 function subject_validation() {
-	if ($("#subject").val().length < 1) {
+	if ($("#subjects").val().length < 1) {
 	   	$("#subject_notification").show();
-		$("#subject").css('background-color', '#E4E4E4');
+		$("#subjects").css('background-color', '#E4E4E4');
 	} else {
         $("#subject_notification").hide();
-		$("#subject").css('background-color', '#FFF');
+		$("#subjects").css('background-color', '#FFF');
   	}
 }
 function questions_validation(){
@@ -107,7 +107,7 @@ function send_form () {
 	var name = $ ('#name').val ();
 	var email = $ ('#email').val ();
 	var url = $ ('#url').val ();
-	var subject = $ ('#subject').val ();
+	var subject = $ ('#subjects').val ();
 	var questions = $ ('#questions').val ();
 
 	if (
@@ -181,9 +181,9 @@ function send_form () {
 					$("#url_notification").show();
 					$("#url").css('background-color', '#E4E4E4');
 			   }
-			   if ($("#subject").val().length < 1) {
+			   if ($("#subjects").val().length < 1) {
 					$("#subject_notification").show();
-					$("#subject").css('background-color', '#E4E4E4');
+					$("#subjects").css('background-color', '#E4E4E4');
 			   }
 			   if ($("#questions").val().length < 1) {
 					$("#questions_notification").show();

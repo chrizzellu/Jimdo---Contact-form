@@ -4,19 +4,19 @@ var main_german = [
         "text": "Thema"
     },
     {
-        "key": "support_contact_form_name",
-        "text": "Dein vollständiger Name"
+        "key": "support_contact_form_name_input_field",
+        "text": "Dein Name"
     },
     {
-        "key": "support_contact_form_email",
+        "key": "support_contact_form_email_input_field",
         "text": "Deine Email-Adresse"
     },
     {
-        "key": "support_contact_form_url",
+        "key": "support_contact_form_url_input_field",
         "text": "URL deiner Jimdo Webseite"
     },
     {
-        "key": "support_contact_form_message",
+        "key": "support_contact_form_message_input_area",
         "text": "Deine Nachricht"
     }
 ];
@@ -238,6 +238,12 @@ var faq_german = {
     }
 };
 
+var notifications_german = {
+    "name": "Mindestens 2 Zeichen",
+    "email": "Keine valide Email Adresse",
+    "url": "Keine valide URL"
+};
+
 var button_german = "Senden";
 
 var texts = {
@@ -245,6 +251,7 @@ var texts = {
         "main" : main_german,
         "subjects" : subjects_german,
         "button" : button_german,
-        "faq" : faq_german
+        "faq" : faq_german,
+        "notifications": notifications_german
     }
 };

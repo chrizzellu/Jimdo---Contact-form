@@ -1,7 +1,7 @@
 (function(){
     var populateForm = function(main) {
         $.each(main, function(index, value) {
-            var label = $("label[for='"+value.key+"']");
+            var label = $('label[for="'+value.key+'"]');
             label.text(value.text);
         });
 
@@ -9,14 +9,14 @@
 
 var populateFormSubject = function(subjects) {
     $.each(subjects, function (index, value) {
-        $("#support_contact_form_subject").append(
+        $('#support_contact_form_subject').append(
             '<option value="' + value.key + '">' + value.text + '</option>'
         );
     });
 };
 
 var populateButton = function(button) {
-    $("#support_contact_form_submit_button").attr('value',button);
+    $('#support_contact_form_submit_button').attr('value',button);
 };
 
 var populateFaq = function(faq) {
@@ -32,6 +32,20 @@ var populateFaq = function(faq) {
     $('#support_contact_form_faq').html(html)
 };
 
+    var validateForm = function(notifications) {
+        validateName(notifications.name);
+    };
+
+    var validateName = function(notification) {
+        var value = $('#support_contact_form_name_input_field').val();
+        if (typeof value === 'string' && value.length > 1) {
+            return true;
+        } else {
+            $('#support_contact_form_name_input_field_notification').html(notification);
+            return false;
+        }
+    };
+
 $().ready(function() {
     var locale = "de_DE";
     populateForm(texts[locale].main);
@@ -41,6 +55,11 @@ $().ready(function() {
     $('#support_contact_form_subject').on('change', function(e) {
         var key = $($(this).children().get(this.selectedIndex)).attr('value');
         populateFaq(texts[locale].faq[key]);
+    });
+
+    $('#support_contact_form_submit_button').on('click', function(e) {
+        e.preventDefault();
+        validateForm(texts[locale].notifications);
     })
 });
 })();
