@@ -33,7 +33,10 @@ var populateFaq = function(faq) {
 };
 
     var validateForm = function(notifications) {
-        validateName(notifications.name);
+        if (!validateName(notifications.name) || !validateEmail(notifications.email)) {
+            return false;
+        }
+        return true;
     };
 
     var validateName = function(notification) {
@@ -42,6 +45,17 @@ var populateFaq = function(faq) {
             return true;
         } else {
             $('#support_contact_form_name_input_field_notification').html(notification);
+            return false;
+        }
+    };
+
+    var validateEmail = function(notification) {
+        var value = $('#support_contact_form_email_input_field').val();
+        var regexp = '^[a-zA-Z0-9_.+-äöüß]+@[a-zA-Z0-9-äöüß]+\.[a-zA-Z0-9-.]+$';
+        if (typeof value === 'string' && value.match(regexp)) {
+            return true;
+        } else {
+            $('#support_contact_form_email_input_field_notification').html(notification);
             return false;
         }
     };
@@ -59,6 +73,7 @@ $().ready(function() {
 
     $('#support_contact_form_submit_button').on('click', function(e) {
         e.preventDefault();
+        $('.support_contact_form_notification').html('');
         validateForm(texts[locale].notifications);
     })
 });
