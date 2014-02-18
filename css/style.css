@@ -23,12 +23,14 @@
     width: 600px;
     height: 25px;
     float: left;
+    font-size: 1rem;
 }
 
 .support_contact_form_input_area {
     float: left;
     width: 690px;
     height: 200px;
+    font-size: 1rem;
 }
 
 #support_contact_form_submit {
