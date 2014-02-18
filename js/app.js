@@ -98,6 +98,21 @@
         );
     };
 
+    var checkMail = function (email, url) {
+        $.ajax(
+            {
+                type: "GET",
+                async: false,
+                url: "http://mgmt.jimdo.dev/api/support/checkmail",
+                dataType: "json",
+                data: {
+                    'email': email,
+                    'url': url
+                }
+            }
+        );
+    };
+
     $().ready(function () {
         var locale = "de_DE";
         populateForm(texts[locale].main);
@@ -110,8 +125,11 @@
         });
 
         $('#support_contact_form_mail_input').on('change', function (e) {
-            
-
+            var email = validateEmail(texts[locale].notifications.email);
+            var url = validateUrl(texts[locale].notifications.url);
+            if (email && url) {
+                checkMail(email, url);
+            }
         });
 
         $('#support_contact_form_submit_button').on('click', function (e) {
