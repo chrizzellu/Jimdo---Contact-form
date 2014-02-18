@@ -5,15 +5,17 @@
     <title>Contact form</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/texts.js"></script>
 </head>
 
 <body>
 <div id="support_contact_form_wrapper">
     <form id="support_contact_form" action="" novalidate>
         <div id="support_contact_form_subject_input" class="support_contact_form_input">
-            <div class="support_contact_form_label"><label for="subject">Betreff</label></div>
-            <input type="text" id="subject" name="subject" class="support_contact_form_input_field" />
+            <div class="support_contact_form_label"><label for="support_contact_form_subject">Betreff</label></div>
+            <select name="support_contact_form_subject" id="support_contact_form_subject" class="support_contact_form_input_field">
+                <option value="select_subject">Wähle ein Thema aus</option>
+            </select>
         </div>
         <div id="support_contact_form_name_input" class="support_contact_form_input">
             <div class="support_contact_form_label"><label for="name">Dein vollständiger Name</label></div>
@@ -28,7 +30,7 @@
             <input type="url" id="url" name="url" value="http://"  class="support_contact_form_input_field" />
         </div>
         <div id="support_contact_form_message_input" class="support_contact_form_input">
-            <div class="support_contact_form_label"><label for="message">Nachricht</label></div>
+            <div class="support_contact_form_label"><label for="message">Deine Nachricht</label></div>
             <textarea name="message" id="message" class="support_contact_form_input_area"></textarea>
         </div>
         <div id="support_contact_form_submit">

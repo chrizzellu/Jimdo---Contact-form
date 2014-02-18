@@ -1,3 +1,31 @@
+var main_german = [
+    {
+        "key": "subject",
+        "text": "Thema"
+    },
+    {
+        "key": "choose_subject",
+        "text": "Wähle ein Thema aus"
+    },
+    {
+        "key": "name",
+        "text": "Dein vollständiger Name"
+    },
+    {
+        "key": "mailaddress",
+        "text": "Deine Email-Adresse"
+    },
+    {
+        "key": "url",
+        "text": "URL deiner Jimdo Webseite"
+    },
+    {
+        "key": "message",
+        "text": "Deine Nachricht"
+    }
+];
+
+
 var subjects_german = [
     {
         "key": "login",
@@ -24,6 +52,35 @@ var subjects_german = [
         "text": "Suchmaschinenoptimierung"
     },
     {
-        "key": ""
+        "key": "payment",
+        "text": "Vertrag & Zahlung"
+    },
+    {
+        "key": "cancellation",
+        "text": "Kündgung"
+    },
+    {
+        "key": "cms",
+        "text": "Features und Elemente"
+    },
+    {
+        "key": "bugreport",
+        "text": "Fehlermeldungen"
+    },
+    {
+        "key": "shop",
+        "text": "Shop"
+    },
+    {
+        "key": "Widgets",
+        "text": "Widgets & Dienstleistungen"
+    },
+    {
+        "key": "feedback",
+        "text": "Feedback"
+    },
+    {
+        "key": "miscellaneous",
+        "text": "Sonstiges"
     }
-]
+];
