@@ -1,32 +1,32 @@
 var main_german = [
     {
-        "key": "subject",
+        "key": "support_contact_form_subject",
         "text": "Thema"
     },
     {
-        "key": "choose_subject",
-        "text": "Wähle ein Thema aus"
-    },
-    {
-        "key": "name",
+        "key": "support_contact_form_name",
         "text": "Dein vollständiger Name"
     },
     {
-        "key": "mailaddress",
+        "key": "support_contact_form_email",
         "text": "Deine Email-Adresse"
     },
     {
-        "key": "url",
+        "key": "support_contact_form_url",
         "text": "URL deiner Jimdo Webseite"
     },
     {
-        "key": "message",
+        "key": "support_contact_form_message",
         "text": "Deine Nachricht"
     }
 ];
 
 
 var subjects_german = [
+    {
+        "key": "choose_subject",
+        "text": "Wähle ein Thema aus"
+    },
     {
         "key": "login",
         "text": "Login und Passwort"
