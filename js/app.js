@@ -33,10 +33,9 @@ var populateFaq = function(faq) {
 };
 
     var validateForm = function(notifications) {
-        if (!validateName(notifications.name) || !validateEmail(notifications.email)) {
-            return false;
-        }
-        return true;
+        validateName(notifications.name);
+        validateEmail(notifications.email);
+        validateUrl(notifications.url);
     };
 
     var validateName = function(notification) {
@@ -52,10 +51,23 @@ var populateFaq = function(faq) {
     var validateEmail = function(notification) {
         var value = $('#support_contact_form_email_input_field').val();
         var regexp = '^[a-zA-Z0-9_.+-äöüß]+@[a-zA-Z0-9-äöüß]+\.[a-zA-Z0-9-.]+$';
-        if (typeof value === 'string' && value.match(regexp)) {
-            return true;
+        var match = value.match(regexp);
+        if (typeof value === 'string' && match) {
+            return match[0];
         } else {
             $('#support_contact_form_email_input_field_notification').html(notification);
+            return false;
+        }
+    };
+
+    var validateUrl = function(notification) {
+        var value = $('#support_contact_form_url_input_field').val();
+        var regexp = '^(https?://([a-z0-9]+[-a-z0-9]?[a-z0-9]+\.)+)[a-z]{2,6}(:[0-9]{1,5})?(/[^ ]*)?$';
+        var match = value.match(regexp);
+        if (typeof value === 'string' && match) {
+            return match[1];
+        } else {
+            $('#support_contact_form_url_input_field_notification').html(notification);
             return false;
         }
     };

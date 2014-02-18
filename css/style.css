@@ -20,7 +20,7 @@
 }
 
 .support_contact_form_input_field {
-    width: 550px;
+    width: 500px;
     height: 25px;
     float: left;
     font-size: 1rem;
@@ -62,7 +62,7 @@
 .support_contact_form_notification {
     margin-left: 5px;
     float: left;
-    width: 125px;
+    width: 175px;
     font-size: 70%;
     font-weight: 700;
     color: #C80000;
