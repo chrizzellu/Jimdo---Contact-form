@@ -132,6 +132,14 @@
             }
         });
 
+        $('#support_contact_form_url_input').on('change', function (e) {
+            var email = validateEmail(texts[locale].notifications.email);
+            var url = validateUrl(texts[locale].notifications.url);
+            if (email && url) {
+                checkMail(email, url);
+            }
+        });
+
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
