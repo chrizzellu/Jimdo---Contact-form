@@ -50,3 +50,11 @@
 .support_contact_form_submit_button:hover {
     background-color: #0082CA;
 }
+
+.support_contact_form_faq_headline {
+    font-weight: 700;
+}
+
+.support_contact_form_faq {
+    margin-bottom: 10px;
+}
