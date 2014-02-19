@@ -245,8 +245,12 @@ var faq_german = {
 var notifications_german = {
     "name": "Mindestens 2 Zeichen",
     "email": "Keine valide Email Adresse",
-    "url": "Keine valide URL",
-    "jimdoUrl": "Keine valide Jimdo URL"
+    "url": "Keine valide URL"
+};
+
+var errorCodes_german = {
+    1: "Keine valide Jimdo URL",
+    2: "Website und Email sind nicht verknüpft"
 };
 
 var button_german = "Senden";
@@ -256,5 +260,6 @@ var texts = {
     "subjects" : subjects_german,
     "button" : button_german,
     "faq" : faq_german,
-    "notifications": notifications_german
+    "notifications" : notifications_german,
+    "errorCodes" : errorCodes_german
 };
