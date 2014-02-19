@@ -78,6 +78,10 @@ var subjects_german = [
         "text": "Feedback"
     },
     {
+        "key": "junk",
+        "text": "Rechtsverletzung oder bedenkliche Inhalte melden"
+    },
+    {
         "key": "miscellaneous",
         "text": "Sonstiges"
     }
