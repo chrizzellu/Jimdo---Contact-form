@@ -124,7 +124,12 @@
             populateFaq(texts[locale].faq[key]);
         });
 
+        $('#support_contact_form_name_input_field').on('change', function (e) {
+            $('.support_contact_form_notification').html('');
+        });
+
         $('#support_contact_form_mail_input').on('change', function (e) {
+            $('.support_contact_form_notification').html('');
             var email = validateEmail(texts[locale].notifications.email);
             var url = validateUrl(texts[locale].notifications.url);
             if (email && url) {
@@ -132,7 +137,8 @@
             }
         });
 
-        $('#support_contact_form_url_input').on('change', function (e) {
+        $('#support_contact_form_url_input_field').on('change', function (e) {
+            $('.support_contact_form_notification').html('');
             var email = validateEmail(texts[locale].notifications.email);
             var url = validateUrl(texts[locale].notifications.url);
             if (email && url) {
