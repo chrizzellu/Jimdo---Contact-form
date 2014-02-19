@@ -114,14 +114,13 @@
     };
 
     $().ready(function () {
-        var locale = "de_DE";
-        populateForm(texts[locale].main);
-        populateFormSubject(texts[locale].subjects);
-        populateButton(texts[locale].button);
+        populateForm(texts.main);
+        populateFormSubject(texts.subjects);
+        populateButton(texts.button);
 
         $('#support_contact_form_subject').on('change', function (e) {
             var key = $($(this).children().get(this.selectedIndex)).attr('value');
-            populateFaq(texts[locale].faq[key]);
+            populateFaq(texts.faq[key]);
         });
 
         $('#support_contact_form_name_input_field').on('change', function (e) {
@@ -130,8 +129,8 @@
 
         $('#support_contact_form_mail_input').on('change', function (e) {
             $('.support_contact_form_notification').html('');
-            var email = validateEmail(texts[locale].notifications.email);
-            var url = validateUrl(texts[locale].notifications.url);
+            var email = validateEmail(texts.notifications.email);
+            var url = validateUrl(texts.notifications.url);
             if (email && url) {
                 checkMail(email, url);
             }
@@ -139,8 +138,8 @@
 
         $('#support_contact_form_url_input_field').on('change', function (e) {
             $('.support_contact_form_notification').html('');
-            var email = validateEmail(texts[locale].notifications.email);
-            var url = validateUrl(texts[locale].notifications.url);
+            var email = validateEmail(texts.notifications.email);
+            var url = validateUrl(texts.notifications.url);
             if (email && url) {
                 checkMail(email, url);
             }
@@ -149,7 +148,7 @@
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
-            if (validateForm(texts[locale].notifications)) {
+            if (validateForm(texts.notifications)) {
                 formSubmit();
             }
         })

@@ -251,11 +251,9 @@ var notifications_german = {
 var button_german = "Senden";
 
 var texts = {
-    "de_DE" : {
-        "main" : main_german,
-        "subjects" : subjects_german,
-        "button" : button_german,
-        "faq" : faq_german,
-        "notifications": notifications_german
-    }
+    "main" : main_german,
+    "subjects" : subjects_german,
+    "button" : button_german,
+    "faq" : faq_german,
+    "notifications": notifications_german
 };
