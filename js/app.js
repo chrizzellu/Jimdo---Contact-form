@@ -85,7 +85,7 @@
             {
                 type: "POST",
                 async: false,
-                url: "http://mgmt.jimdo.dev/api/support/sendmail",
+                url: "http://a.jimdo.dev/app/web/support/sendmail",
                 dataType: "json",
                 data: {
                     'name': validateName(),
@@ -98,19 +98,18 @@
         );
     };
 
+
+
     var checkMail = function (email, url) {
-        $.ajax(
-            {
-                type: "GET",
-                async: false,
-                url: "http://mgmt.jimdo.dev/api/support/checkmail",
-                dataType: "json",
-                data: {
-                    'email': email,
-                    'url': url
-                }
+        $.getJSON( "http://a.jimdo.dev/app/web/support/checkmail?callback=?", function(data) {
+            success = data.success;
+            packageID = data.packageId;
+            message = data.message;
+
+            if (!success) {
+                $('#support_contact_form_url_input_field_notification').html(texts.notifications.jimdoUrl);
             }
-        );
+        });
     };
 
     $().ready(function () {
@@ -127,7 +126,7 @@
             $('.support_contact_form_notification').html('');
         });
 
-        $('#support_contact_form_mail_input').on('change', function (e) {
+        $('#support_contact_form_email_input_field').on('change', function (e) {
             $('.support_contact_form_notification').html('');
             var email = validateEmail(texts.notifications.email);
             var url = validateUrl(texts.notifications.url);
