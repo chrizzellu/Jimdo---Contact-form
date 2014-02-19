@@ -1,4 +1,6 @@
 (function () {
+    var validJimdoUrl = false;
+
     var populateForm = function () {
         $.each(texts.main, function (index, value) {
             var label = $('label[for="' + value.key + '"]');
@@ -81,21 +83,17 @@
     };
 
     var formSubmit = function () {
-        $.ajax(
-            {
-                type: "POST",
-                async: false,
-                url: "http://a.jimdo.dev/app/web/support/sendmail",
-                dataType: "json",
-                data: {
-                    'name': validateName(),
-                    'from': validateEmail(),
-                    'url': validateUrl(),
-                    'subject': $('#support_contact_form_subject').val(),
-                    'message': $('#support_contact_form_message_input_area').val()
-                }
-            }
-        );
+        var data = {
+            'name': validateName(),
+                'from': validateEmail(),
+                'url': validateUrl(),
+                'subject': $('#support_contact_form_subject').val(),
+                'message': $('#support_contact_form_message_input_area').val()
+        };
+
+        $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback?=", data, function(response) {
+            console.log(response);
+        });
     };
 
 
@@ -106,11 +104,11 @@
             'url': url
         };
 
-        $.getJSON( "http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
-            success = response.success;
-            packageID = response.packageId;
-            errorCode = response.errorCode;
-
+        $.getJSON("http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
+            var success = response.success;
+            var packageId = response.packageId;
+            var errorCode = response.errorCode;
+            validJimdoUrl = !(errorCode == 1);
             if (!success) {
                 $('#support_contact_form_url_input_field_notification').html(texts.errorCodes[errorCode]);
             }
@@ -152,7 +150,7 @@
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
-            if (validateForm()) {
+            if (validateForm() && validJimdoUrl) {
                 formSubmit();
             }
         })
