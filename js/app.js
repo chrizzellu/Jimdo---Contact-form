@@ -85,14 +85,16 @@
     var submitForm = function () {
         var data = {
             'name': validateName(),
-            'from': validateEmail(),
+            'email': validateEmail(),
             'url': validateUrl(),
             'subject': $('#support_contact_form_subject').val(),
             'message': $('#support_contact_form_message_input_area').val()
         };
 
-        $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback?=", data, function(response) {
-            console.log(response);
+        $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback=?", data, function(response) {
+            if (!response.success) {
+                alert(response.errorMessage);
+            }
         });
     };
 
@@ -106,7 +108,6 @@
 
         $.getJSON("http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
             var success = response.success;
-            var packageId = response.packageId;
             var errorCode = response.errorCode;
             validJimdoUrl = !(errorCode == 1);
             if (!success) {
