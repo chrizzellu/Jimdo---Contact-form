@@ -55,7 +55,7 @@ var subjects_german = [
     },
     {
         "key": "cancellation",
-        "text": "Kündgung"
+        "text": "Kündigung"
     },
     {
         "key": "cms",

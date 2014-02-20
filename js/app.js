@@ -82,13 +82,13 @@
         }
     };
 
-    var formSubmit = function () {
+    var submitForm = function () {
         var data = {
             'name': validateName(),
-                'from': validateEmail(),
-                'url': validateUrl(),
-                'subject': $('#support_contact_form_subject').val(),
-                'message': $('#support_contact_form_message_input_area').val()
+            'from': validateEmail(),
+            'url': validateUrl(),
+            'subject': $('#support_contact_form_subject').val(),
+            'message': $('#support_contact_form_message_input_area').val()
         };
 
         $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback?=", data, function(response) {
@@ -151,7 +151,7 @@
             e.preventDefault();
             $('.support_contact_form_notification').html('');
             if (validateForm() && validJimdoUrl) {
-                formSubmit();
+                submitForm();
             }
         })
     });
