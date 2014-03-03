@@ -91,7 +91,7 @@
             'message': $('#support_contact_form_message_input_area').val()
         };
 
-        $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback=?", data, function(response) {
+        $.getJSON("http://a.jimdo.com/app/web/support/sendmail?callback=?", data, function(response) {
             if (!response.success) {
                 alert(response.errorMessage);
             }
@@ -106,7 +106,7 @@
             'url': url
         };
 
-        $.getJSON("http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
+        $.getJSON("http://a.jimdo.com/app/web/support/checkmail?callback=?", data, function(response) {
             var success = response.success;
             var errorCode = response.errorCode;
             validJimdoUrl = !(errorCode == 1);
