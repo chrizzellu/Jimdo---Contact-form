@@ -87,7 +87,7 @@
             'name': validateName(),
             'email': validateEmail(),
             'url': validateUrl(),
-            'subject': $('#support_contact_form_subject').val(),
+            'subject': $('#support_contact_form_subject option:selected').text(),
             'message': $('#support_contact_form_message_input_area').val()
         };
 
