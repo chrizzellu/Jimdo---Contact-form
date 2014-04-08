@@ -116,6 +116,14 @@
         });
     };
 
+    var validateSubject = function () {
+        //TODO: check subjects
+        if (false) {
+            return true;
+        }
+        return validJimdoUrl
+    }
+
     $().ready(function () {
         populateForm();
         populateFormSubject();
@@ -151,7 +159,7 @@
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
-            if (validateForm() && validJimdoUrl) {
+            if (validateForm() && validateSubject()) {
                 submitForm();
             }
         })
