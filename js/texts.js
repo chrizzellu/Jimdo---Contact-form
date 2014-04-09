@@ -264,5 +264,6 @@ var texts = {
     "faq" : faq_german,
     "notifications" : notifications_german,
     "errorCodes" : errorCodes_german,
-    "noUrlValidation" : noUrlValidation_german
+    "noUrlValidation" : noUrlValidation_german,
+    "lang" : "de"
 };
