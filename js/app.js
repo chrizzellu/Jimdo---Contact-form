@@ -165,6 +165,7 @@
             var key = $($(this).children().get(this.selectedIndex)).attr('value');
             if (key != 'choose_subject') {
                 showForm();
+                $('.support_contact_form_notification').html('');
                 populateFaq(texts.faq[key]);
                 changeValidation(key);
             } else {
@@ -199,8 +200,11 @@
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
-            if (validateForm()) {
+            var subject = $('#support_contact_form_subject')
+            if (validateForm() && (subject != 'choose_subject')) {
                 submitForm();
+            } else {
+                alert(texts.notifications.missing);
             }
         })
     });

@@ -249,7 +249,8 @@ var faq_german = {
 var notifications_german = {
     "name": "Mindestens 2 Zeichen",
     "email": "Keine valide Email Adresse",
-    "url": "Keine valide URL"
+    "url": "Keine valide URL",
+    "missing": "Fehlende Angaben"
 };
 
 var errorCodes_german = {
