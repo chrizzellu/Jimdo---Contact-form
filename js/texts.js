@@ -84,7 +84,7 @@ var subjects_german = [
     {
         "key": "spam",
         "text": "Phishing oder Spam auf einer Jimdo-Seite melden"
-    }
+    },
     {
         "key": "miscellaneous",
         "text": "Sonstiges"

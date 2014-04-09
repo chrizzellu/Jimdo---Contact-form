@@ -138,16 +138,40 @@
         }
     };
 
+    var hideForm = function () {
+        $('#support_contact_form_name_input').hide();
+        $('#support_contact_form_mail_input').hide();
+        $('#support_contact_form_url_input').hide();
+        $('#support_contact_form_message_input').hide();
+        $('#support_contact_form_submit').hide();
+    }
+
+    var showForm = function () {
+        $('#support_contact_form_name_input').show();
+        $('#support_contact_form_mail_input').show();
+        $('#support_contact_form_url_input').show();
+        $('#support_contact_form_message_input').show();
+        $('#support_contact_form_submit').show();
+    }
+
     $().ready(function () {
+
         populateForm();
         populateFormSubject();
         populateButton();
+        hideForm();
 
         $('#support_contact_form_subject').on('change', function (e) {
             var key = $($(this).children().get(this.selectedIndex)).attr('value');
-            populateFaq(texts.faq[key]);
-            changeValidation(key);
+            if (key != 'choose_subject') {
+                showForm();
+                populateFaq(texts.faq[key]);
+                changeValidation(key);
+            } else {
+                hideForm();
+                $('#support_contact_form_faq').html('');
 
+            }
         });
 
         $('#support_contact_form_name_input_field').on('change', function (e) {
