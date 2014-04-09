@@ -59,7 +59,7 @@ var subjects_german = [
     },
     {
         "key": "cms",
-        "text": "Features und Elemente"
+        "text": "Elemente und Funktionen"
     },
     {
         "key": "bugreport",
@@ -71,7 +71,7 @@ var subjects_german = [
     },
     {
         "key": "Widgets",
-        "text": "Widgets & Dienstleistungen"
+        "text": "Widgets & externe Anwendungen"
     },
     {
         "key": "feedback",
