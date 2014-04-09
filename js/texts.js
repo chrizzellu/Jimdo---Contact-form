@@ -255,11 +255,14 @@ var errorCodes_german = {
 
 var button_german = "Senden";
 
+var noUrlValidation_german = ["presales", "trial", "junk"];
+
 var texts = {
     "main" : main_german,
     "subjects" : subjects_german,
     "button" : button_german,
     "faq" : faq_german,
     "notifications" : notifications_german,
-    "errorCodes" : errorCodes_german
+    "errorCodes" : errorCodes_german,
+    "noUrlValidation" : noUrlValidation_german
 };
