@@ -43,11 +43,11 @@ var subjects_german = [
     },
     {
         "key": "email",
-        "text": "Email Accounts"
+        "text": "Email Konten"
     },
     {
         "key": "seo",
-        "text": "Suchmaschinenoptimierung"
+        "text": "Suchmaschinen"
     },
     {
         "key": "payment",
