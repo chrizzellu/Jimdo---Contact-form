@@ -82,6 +82,10 @@ var subjects_german = [
         "text": "Rechtsverletzung oder bedenkliche Inhalte melden"
     },
     {
+        "key": "spam",
+        "text": "Phishing oder Spam auf einer Jimdo-Seite melden"
+    }
+    {
         "key": "miscellaneous",
         "text": "Sonstiges"
     }
@@ -255,7 +259,7 @@ var errorCodes_german = {
 
 var button_german = "Senden";
 
-var noUrlValidation_german = ["presales", "trial", "junk"];
+var noUrlValidation_german = ["presales", "trial", "junk", "spam"];
 
 var texts = {
     "main" : main_german,
