@@ -2,6 +2,9 @@
     var checkConnection = true;
     var checkUrl = true;
     var validJimdo = false;
+    var lastCheckedUrl = '';
+    var lastCheckedEmail = '';
+    var emailToUrlChecked = null;
 
     var populateForm = function () {
         $.each(texts.main, function (index, value) {
@@ -52,24 +55,31 @@
 
     var validateName = function () {
         var value = $('#support_contact_form_name_input_field').val();
+        var error = '';
+        var ret = false;
         if (typeof value === 'string' && value.length > 1) {
-            return value;
+            ret = value;
         } else {
-            $('#support_contact_form_name_input_field_notification').html(texts.notifications.name);
-            return false;
+            error = texts.notifications.name;
         }
+        $('#support_contact_form_name_input_field_notification').html(error);
+        return ret;
     };
 
     var validateEmail = function () {
         var value = $('#support_contact_form_email_input_field').val();
         var regexp = new RegExp('^[a-z0-9_.+-äöüß]+@[a-z0-9-äöüß]+\.[a-z0-9-.]+$', 'i');
         var match = value.match(regexp);
+        var error = '';
+        var ret = false;
         if (typeof value === 'string' && match) {
-            return match[0];
+            ret = match[0];
         } else {
-            $('#support_contact_form_email_input_field_notification').html(texts.notifications.email);
-            return false;
+            $('#support_contact_form_email_to_url_input_field_notification').html('');
+            error = texts.notifications.email;
         }
+        $('#support_contact_form_email_input_field_notification').html(error);
+        return ret;
     };
 
     var validateUrl = function () {
@@ -77,14 +87,26 @@
             var value = $('#support_contact_form_url_input_field').val();
             var regexp = new RegExp('^(https?://(?:[a-z0-9äöü]+[-a-z0-9äöü]?[a-z0-9äöü]+\\.)+[a-z]{2,6})(?::[0-9]{1,5})?(?:/[^ ]*)?$', 'i');
             var match = value.match(regexp);
+            var error = '';
+            var ret = false;
             if (typeof value === 'string' && match) {
-                return match[1];
+                ret = match[1];
             } else {
-                $('#support_contact_form_url_input_field_notification').html(texts.notifications.url);
-                return false;
+                $('#support_contact_form_email_to_url_input_field_notification').html('');
+                error = texts.notifications.url;
             }
+            $('#support_contact_form_url_input_field_notification').html(error);
+            return ret;
         } else {
             return true;
+        }
+    };
+
+    var validateEmailAndUrl = function() {
+        var email = validateEmail();
+        var url = validateUrl();
+        if (hasChanged(email, url) && email && url) {
+            checkMail(email, url);
         }
     };
 
@@ -108,25 +130,28 @@
     };
 
     var changeValidation = function (key) {
-        var validate = true;
-        for (var i = 0; i < texts.noUrlValidation.length; i++) {
-            if (texts.noUrlValidation[i] === key) {
-                checkConnection = false;
-                checkUrl = false;
-                $('#support_contact_form_url_input_field_notification').html('');
-                validate = false;
-                break;
-            }
-        }
-        if (validate) {
+        if (texts.noUrlValidation.indexOf(key) >= 0) {
+            checkConnection = false;
+            checkUrl = false;
+            $('#support_contact_form_url_input_field_notification').html('');
+        } else {
             checkConnection = true;
             checkUrl = true;
-            checkMail(validateEmail(), validateUrl());
         }
+    }
+
+    var hasChanged = function(email, url) {
+        if (lastCheckedEmail !== email || lastCheckedUrl !== url) {
+            lastCheckedEmail = email;
+            lastCheckedUrl = url;
+            return true;
+        }
+        return false;
     }
 
     var checkMail = function (email, url) {
         if (checkConnection) {
+            emailToUrlChecked = $.Deferred();
             var data = {
                 'email': email,
                 'url': url
@@ -135,38 +160,25 @@
             $.getJSON("http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
                 var success = response.success;
                 var errorCode = response.errorCode;
-                validJimdo = !(errorCode == 1);
+                var error = '';
+                emailToUrlChecked.resolve((errorCode !== 1));
                 if (!success) {
-                    $('#support_contact_form_url_input_field_notification').html(texts.errorCodes[errorCode]);
+                    error = texts.errorCodes[errorCode];
                 }
+                $('#support_contact_form_email_to_url_input_field_notification').html(error);
             });
         }
     };
 
     var hideForm = function () {
-        $('#support_contact_form_name_input').hide();
-        $('#support_contact_form_mail_input').hide();
-        $('#support_contact_form_url_input').hide();
-        $('#support_contact_form_message_input').hide();
-        $('#support_contact_form_submit').hide();
+        $('.support_contact_form_input_content, #support_contact_form_submit').hide();
     }
 
     var showForm = function () {
-        $('#support_contact_form_name_input').show();
-        $('#support_contact_form_mail_input').show();
-        $('#support_contact_form_url_input').show();
-        $('#support_contact_form_message_input').show();
-        $('#support_contact_form_submit').show();
+        $('.support_contact_form_input_content,#support_contact_form_submit').show();
     }
 
-    var validJimdoUrl = function () {
-        if (checkUrl) {
-            return validJimdo;
-        }
-        return true;
-    }
-
-    $().ready(function () {
+    $(function () {
 
         populateForm();
         populateFormSubject();
@@ -174,8 +186,8 @@
         hideForm();
 
         $('#support_contact_form_subject').on('change', function (e) {
-            var key = $($(this).children().get(this.selectedIndex)).attr('value');
-            if (key != 'choose_subject') {
+            var key = $(this).val();
+            if (key !== 'choose_subject') {
                 showForm();
                 populateFaq(texts.faq[key]);
                 changeValidation(key);
@@ -183,45 +195,54 @@
                 hideForm();
                 $('#support_contact_form_faq').html('');
             }
-            $('.support_contact_form_notification').html('');
         });
 
-        $('#support_contact_form_name_input_field').on('change', function (e) {
-            $('.support_contact_form_notification').html('');
-        });
+        $('#support_contact_form_name_input_field').on('blur', validateName);
 
-        $('#support_contact_form_email_input_field').on('change', function (e) {
-            $('.support_contact_form_notification').html('');
-            var email = validateEmail();
-            var url = validateUrl();
-            if (email && url) {
-                checkMail(email, url);
+        var $emailInput = $('#support_contact_form_email_input_field');
+        var $urlInput = $('#support_contact_form_url_input_field');
+
+        $emailInput.on('blur', function() {
+            if ($urlInput.val().replace(/http(s)?:\/\//, '').length) {
+                validateEmailAndUrl();
+            } else {
+                validateEmail();
             }
         });
 
-        $('#support_contact_form_url_input_field').on('change', function (e) {
-            $('.support_contact_form_notification').html('');
-            var email = validateEmail();
-            var url = validateUrl();
-            if (email && url) {
-                checkMail(email, url);
+        $urlInput.on('blur', function() {
+            if ($emailInput.val().length) {
+                validateEmailAndUrl();
+            } else {
+                validateUrl();
             }
         });
 
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
+            if (subject = $('#support_contact_form_subject').val() === 'choose_subject') {
+                return;
+            }
+
+
             $('.support_contact_form_notification').html('');
-            var email = validateEmail();
-            var url = validateUrl();
-            if (email && url) {
-                checkMail(email, url);
-            }
+            validateName();
+            validateEmailAndUrl();
+
             var subject = $('#support_contact_form_subject').val();
-            if (validateForm() && (subject != 'choose_subject') && validJimdoUrl()) {
-                submitForm();
-            } else {
+            if (emailToUrlChecked === null) {
                 alert(texts.notifications.missing);
+                return;
             }
+
+            emailToUrlChecked.then(function(ok) {
+                emailToUrlChecked = null;
+                if (ok && validateForm()) {
+                    submitForm();
+                } else {
+                    alert(texts.notifications.missing);
+                }
+            });
         })
     });
 })();
