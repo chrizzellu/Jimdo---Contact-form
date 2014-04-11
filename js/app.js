@@ -82,6 +82,8 @@
                 $('#support_contact_form_url_input_field_notification').html(texts.notifications.url);
                 return false;
             }
+        } else {
+            return true;
         }
     };
 
@@ -200,7 +202,7 @@
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
-            var subject = $('#support_contact_form_subject')
+            var subject = $('#support_contact_form_subject').val();
             if (validateForm() && (subject != 'choose_subject')) {
                 submitForm();
             } else {
