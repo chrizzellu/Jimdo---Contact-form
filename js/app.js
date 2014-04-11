@@ -1,6 +1,7 @@
 (function () {
     var checkConnection = true;
     var checkUrl = true;
+    var validJimdo = false;
 
     var populateForm = function () {
         $.each(texts.main, function (index, value) {
@@ -97,9 +98,11 @@
             'lang' : texts.lang
         };
 
-        $.getJSON("http://a.jimdo.com/app/web/support/sendmail?callback=?", data, function(response) {
+        $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback=?", data, function(response) {
             if (!response.success) {
                 alert(response.errorMessage);
+            } else {
+                alert(response.message);
             }
         });
     };
@@ -129,10 +132,10 @@
                 'url': url
             };
 
-            $.getJSON("http://a.jimdo.com/app/web/support/checkmail?callback=?", data, function(response) {
+            $.getJSON("http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
                 var success = response.success;
                 var errorCode = response.errorCode;
-                validJimdoUrl = !(errorCode == 1);
+                validJimdo = !(errorCode == 1);
                 if (!success) {
                     $('#support_contact_form_url_input_field_notification').html(texts.errorCodes[errorCode]);
                 }
@@ -156,6 +159,13 @@
         $('#support_contact_form_submit').show();
     }
 
+    var validJimdoUrl = function () {
+        if (checkUrl) {
+            return validJimdo;
+        }
+        return true;
+    }
+
     $().ready(function () {
 
         populateForm();
@@ -167,14 +177,13 @@
             var key = $($(this).children().get(this.selectedIndex)).attr('value');
             if (key != 'choose_subject') {
                 showForm();
-                $('.support_contact_form_notification').html('');
                 populateFaq(texts.faq[key]);
                 changeValidation(key);
             } else {
                 hideForm();
                 $('#support_contact_form_faq').html('');
-
             }
+            $('.support_contact_form_notification').html('');
         });
 
         $('#support_contact_form_name_input_field').on('change', function (e) {
@@ -202,8 +211,13 @@
         $('#support_contact_form_submit_button').on('click', function (e) {
             e.preventDefault();
             $('.support_contact_form_notification').html('');
+            var email = validateEmail();
+            var url = validateUrl();
+            if (email && url) {
+                checkMail(email, url);
+            }
             var subject = $('#support_contact_form_subject').val();
-            if (validateForm() && (subject != 'choose_subject')) {
+            if (validateForm() && (subject != 'choose_subject') && validJimdoUrl()) {
                 submitForm();
             } else {
                 alert(texts.notifications.missing);
