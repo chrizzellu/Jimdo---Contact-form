@@ -120,7 +120,7 @@
             'lang' : texts.lang
         };
 
-        $.getJSON("http://a.jimdo.dev/app/web/support/sendmail?callback=?", data, function(response) {
+        $.getJSON("http://a.jimdo.com/app/web/support/sendmail?callback=?", data, function(response) {
             if (!response.success) {
                 alert(response.errorMessage);
             } else {
@@ -157,7 +157,7 @@
                 'url': url
             };
 
-            $.getJSON("http://a.jimdo.dev/app/web/support/checkmail?callback=?", data, function(response) {
+            $.getJSON("http://a.jimdo.com/app/web/support/checkmail?callback=?", data, function(response) {
                 var success = response.success;
                 var errorCode = response.errorCode;
                 var error = '';
@@ -178,8 +178,7 @@
         $('.support_contact_form_input_content,#support_contact_form_submit').show();
     }
 
-    $(function () {
-
+    var init = function() {
         populateForm();
         populateFormSubject();
         populateButton();
@@ -244,5 +243,16 @@
                 }
             });
         })
-    });
+    }
+
+    // $(function() {
+    //     $.getJSON('gfdfiogh/texts_' + jimdoData.cmsLanguage + '.json', function(resp) {
+    //
+    //
+    //     });
+    // });
+
+    $(function() {
+        init();
+    })
 })();
