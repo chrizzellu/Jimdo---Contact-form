@@ -68,7 +68,7 @@
 
     var validateEmail = function () {
         var value = $('#support_contact_form_email_input_field').val();
-        var regexp = new RegExp('^[a-z0-9_.+-äöüß]+@[a-z0-9-äöüß]+\.[a-z0-9-.]+$', 'i');
+        var regexp = new RegExp('/^[^\@]+\@[^\.]+\.(?:[^\.]+)+/', 'i');
         var match = value.match(regexp);
         var error = '';
         var ret = false;
@@ -85,7 +85,7 @@
     var validateUrl = function () {
         if (checkUrl) {
             var value = $('#support_contact_form_url_input_field').val();
-            var regexp = new RegExp('^(https?://(?:[a-z0-9äöü]+[-a-z0-9äöü]?[a-z0-9äöü]+\\.)+[a-z]{2,6})(?::[0-9]{1,5})?(?:/[^ ]*)?$', 'i');
+            var regexp = new RegExp('/^(?:https?:\/\/)?[^\.]+\.(?:[^\.]+)+/', 'i');
             var match = value.match(regexp);
             var error = '';
             var ret = false;
@@ -98,7 +98,7 @@
             $('#support_contact_form_url_input_field_notification').html(error);
             return ret;
         } else {
-            return true;
+            return $('#support_contact_form_url_input_field').val();
         }
     };
 
@@ -229,21 +229,33 @@
             validateEmailAndUrl();
 
             var subject = $('#support_contact_form_subject').val();
-            if (emailToUrlChecked === null) {
-                alert(texts.notifications.missing);
-                return;
-            }
+            if (checkConnection === true) {
+                if (emailToUrlChecked === null) {
+                    alert(texts.notifications.missing);
+                    return;
+                }
 
-            emailToUrlChecked.then(function(ok) {
-                emailToUrlChecked = null;
-                if (ok && validateForm()) {
+                emailToUrlChecked.then(function(ok) {
+                    emailToUrlChecked = null;
+                    if (ok && validateForm()) {
+                        submitForm();
+                    } else {
+                        alert(texts.notifications.missing);
+                    }
+                });
+            } else {
+                if (validateForm()) {
                     submitForm();
                 } else {
                     alert(texts.notifications.missing);
                 }
-            });
-        })
-    }
+            }
+        });
+    };
+
+    $(function() {
+        init();
+    });
 
     // $(function() {
     //     $.getJSON('gfdfiogh/texts_' + jimdoData.cmsLanguage + '.json', function(resp) {
@@ -251,8 +263,4 @@
     //
     //     });
     // });
-
-    $(function() {
-        init();
-    })
 })();
