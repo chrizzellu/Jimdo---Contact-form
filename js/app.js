@@ -68,7 +68,7 @@
 
     var validateEmail = function () {
         var value = $('#support_contact_form_email_input_field').val();
-        var regexp = new RegExp('/^[^\@]+\@[^\.]+\.(?:[^\.]+)+/', 'i');
+        var regexp = new RegExp('^[a-z0-9_.+-äöüß]+@[a-z0-9-äöüß]+\.[a-z0-9-.]+$', 'i');
         var match = value.match(regexp);
         var error = '';
         var ret = false;
@@ -85,7 +85,7 @@
     var validateUrl = function () {
         if (checkUrl) {
             var value = $('#support_contact_form_url_input_field').val();
-            var regexp = new RegExp('/^(?:https?:\/\/)?[^\.]+\.(?:[^\.]+)+/', 'i');
+            var regexp = new RegExp('^(https?://(?:[a-z0-9äöü]+[-a-z0-9äöü]?[a-z0-9äöü]+\\.)+[a-z]{2,6})(?::[0-9]{1,5})?(?:/[^ ]*)?$', 'i');
             var match = value.match(regexp);
             var error = '';
             var ret = false;
