@@ -1,22 +1,22 @@
 var main_german = [
     {
-        "key": "support_contact_form_subject",
+        "key": "support_contact_form_subject_input_label",
         "text": "Thema"
     },
     {
-        "key": "support_contact_form_name_input_field",
+        "key": "support_contact_form_name_input_label",
         "text": "Dein Name"
     },
     {
-        "key": "support_contact_form_email_input_field",
+        "key": "support_contact_form_mail_input_label",
         "text": "Deine Email-Adresse"
     },
     {
-        "key": "support_contact_form_url_input_field",
+        "key": "support_contact_form_url_input_label",
         "text": "URL deiner Jimdo Webseite"
     },
     {
-        "key": "support_contact_form_message_input_area",
+        "key": "support_contact_form_message_input_label",
         "text": "Deine Nachricht"
     }
 ];

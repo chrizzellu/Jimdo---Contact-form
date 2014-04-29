@@ -8,7 +8,7 @@
 
     var populateForm = function () {
         $.each(texts.main, function (index, value) {
-            var label = $('label[for="' + value.key + '"]');
+            var label = $('#'+value.key);
             label.text(value.text);
         });
 
